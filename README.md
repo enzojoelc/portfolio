@@ -8,9 +8,9 @@ Los números salen de mis partes de trabajo, del historial de git y de GitHub. N
 Abrir `index.html` en el navegador.
 
 ## Publicar en GitHub Pages
-1. Crear el repo `enzojoelc.github.io` (público) y subir esta carpeta a `main`.
+1. Repo público `enzojoelc/portfolio`, rama `main`.
 2. En el repo: Settings → Pages → Source: "Deploy from a branch" → `main` / raíz.
-3. Queda en `https://enzojoelc.github.io`.
+3. Queda en `https://enzojoelc.github.io/portfolio/`.
 
 ## Notas
 - Las tipografías (Bricolage Grotesque y Hanken Grotesk) se cargan desde Google Fonts: sin internet cae a la fuente de respaldo.

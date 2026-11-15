@@ -13,10 +13,11 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a6b4d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='15' fill='%23fbfcfc'%3EEC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --papel: #fbfcfc; --tinta: #10161b; --tinta-2: #47525c; --tinta-3: #6a7580;
+  color-scheme: light dark;
+  --papel: #fbfcfc; --tinta: #10161b; --tinta-2: #47525c; --tinta-3: #5f6a74;
   --linea: #dfe4e7; --realce: #f0f4f3; --verde: #0a6b4d; --verde-tenue: #dcefe8;
   --titulos: "Bricolage Grotesque", "Hanken Grotesk", sans-serif;
   --texto: "Hanken Grotesk", "Segoe UI", Roboto, sans-serif;
@@ -26,9 +27,11 @@
           --linea: #262f34; --realce: #171e22; --verde: #63c9a3; --verde-tenue: #17332a; }
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scrollbar-color: var(--linea) var(--papel); -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 1.0625rem/1.65 var(--texto);
-  font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; scrollbar-color: var(--tinta-3) var(--papel); -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 1.0625rem/1.65 var(--texto); -webkit-font-smoothing: antialiased; }
+table, .anios, .cuanto, .cuando { font-variant-numeric: tabular-nums; }
+h1, h2, h3, .puesto { text-wrap: balance; }
+p { text-wrap: pretty; }
 ::selection { background: var(--verde); color: var(--papel); }
 a { color: inherit; text-decoration-color: var(--verde); text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; }
 a:hover { color: var(--verde); }
@@ -37,14 +40,16 @@ a:hover { color: var(--verde); }
 .saltar:focus { left: 16px; top: 16px; background: var(--papel); padding: 8px 12px; z-index: 5; }
 b, strong { font-weight: 600; }
 
-.pagina { max-width: 1160px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; }
+.pagina { max-width: 1160px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: minmax(260px, 4fr) minmax(0, 8fr); gap: 0 clamp(40px, 6vw, 72px); }
 
 /* Columna fija: quién soy y por dónde seguir */
-.lado { position: sticky; top: 0; align-self: start; height: 100vh; height: 100dvh; padding: 88px 0 56px; display: flex; flex-direction: column; }
-h1 { font: 700 clamp(2.6rem, 4.6vw, 3.6rem)/1.02 var(--titulos); letter-spacing: -0.035em; margin: 0; }
+.lado { position: sticky; top: 0; align-self: start; height: 100vh; height: 100dvh; padding: 88px 4px 56px; margin: 0 -4px; display: flex; flex-direction: column;
+  overflow-y: auto; scrollbar-width: thin; }
+h1 { font: 700 clamp(2.4rem, 3.7vw, 3.25rem)/1.02 var(--titulos); letter-spacing: -0.035em; margin: 0; }
 .puesto { font: 500 1.25rem/1.35 var(--titulos); letter-spacing: -0.01em; margin: 14px 0 0; }
 .resumen { color: var(--tinta-2); margin: 18px 0 0; max-width: 34ch; }
-.indice { margin: 56px 0 0; padding: 0; list-style: none; position: relative; }
+.busco { color: var(--tinta); font-weight: 500; margin: 12px 0 0; max-width: 34ch; }
+.indice { margin: 48px 0 0; padding: 0; list-style: none; position: relative; }
 .indice a { display: flex; align-items: center; gap: 14px; min-height: 40px; text-decoration: none; color: var(--tinta-3);
   font-weight: 600; font-size: 0.9375rem; transition: color 0.25s; }
 .indice a::before { content: ""; width: 28px; height: 1.5px; background: currentColor; transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -54,18 +59,20 @@ h1 { font: 700 clamp(2.6rem, 4.6vw, 3.6rem)/1.02 var(--titulos); letter-spacing:
 .enlaces a { display: inline-flex; align-items: center; min-height: 44px; }
 
 /* Columna de contenido */
-main { padding: 88px 0 72px; min-width: 0; }
+main { padding: 88px 0 56px; min-width: 0; }
 section + section { margin-top: 104px; }
 h2 { font: 700 1.5rem/1.2 var(--titulos); letter-spacing: -0.02em; margin: 0 0 20px; scroll-margin-top: 32px; }
 section > p { color: var(--tinta-2); max-width: 62ch; margin: 0 0 16px; }
 section > p b { color: var(--tinta); }
 .nota { font-size: 0.9375rem; color: var(--tinta-3); }
-.nota.origen { margin-top: 28px; }
+.nota.origen { margin-top: 20px; }
+.stack { color: var(--tinta) !important; }
 
-.proyectos { list-style: none; margin: 28px -20px 0; padding: 0; }
-.proyectos li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 20px; padding: 22px 20px; border-radius: 8px; transition: background 0.2s; }
-.proyectos li:hover { background: var(--realce); }
-.cuando { color: var(--tinta-3); font-size: 0.875rem; font-weight: 600; padding-top: 5px; }
+.proyectos { list-style: none; margin: 28px 0 0; padding: 0; }
+.proyectos li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 20px; padding: 22px 0; align-items: baseline; }
+.proyectos h3 { transition: color 0.2s; }
+@media (hover: hover) { .proyectos li:hover h3 { color: var(--verde); } }
+.cuando { color: var(--tinta-3); font-size: 0.875rem; font-weight: 600; }
 h3 { font: 600 1.125rem/1.35 var(--titulos); letter-spacing: -0.01em; margin: 0 0 8px; }
 .proyectos p { margin: 0 0 10px; color: var(--tinta-2); font-size: 1rem; }
 .proyectos .con { color: var(--verde); font-size: 0.875rem; font-weight: 600; margin: 12px 0 0; }
@@ -84,7 +91,7 @@ td.d { color: var(--tinta-3); font-size: 0.9375rem; }
 .anios { list-style: none; margin: 24px 0 0; padding: 0; }
 .anios li { display: grid; grid-template-columns: 56px 84px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--linea); }
 .anios .a { font: 600 1.0625rem/1.65 var(--titulos); }
-.anios .t { color: var(--tinta-3); text-align: right; }
+.anios .t { color: var(--tinta-3); text-align: right; white-space: nowrap; }
 .anios .q { color: var(--tinta-2); }
 
 .metodo { margin: 20px 0 0; padding: 0; list-style: none; }
@@ -94,30 +101,48 @@ td.d { color: var(--tinta-3); font-size: 0.9375rem; }
 .contacto p { font: 500 clamp(1.35rem, 2.6vw, 1.75rem)/1.35 var(--titulos); letter-spacing: -0.015em; color: var(--tinta); max-width: 26ch; }
 .contacto .mail { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: var(--verde); color: var(--papel);
   font-weight: 600; text-decoration: none; margin-top: 8px; transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s; }
-.contacto .mail:hover { color: var(--papel); transform: translateY(-2px); box-shadow: 0 8px 20px -10px var(--verde); }
-footer { margin-top: 88px; color: var(--tinta-3); font-size: 0.875rem; }
+.contacto .mail:hover { color: var(--papel); }
+@media (hover: hover) { .contacto .mail:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -10px var(--verde); } }
+footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.875rem; }
 
 @media (max-width: 900px) {
   .pagina { display: block; padding: 0 20px; }
-  .lado { position: static; height: auto; padding: 56px 0 0; }
-  .indice { display: none; }
+  .lado { position: static; height: auto; padding: 56px 0 0; margin: 0; overflow: visible; }
+  .lado nav { display: none; }
   .enlaces { margin-top: 24px; }
   main { padding-top: 56px; }
   section + section { margin-top: 72px; }
-  .proyectos { margin-left: -12px; margin-right: -12px; }
-  .proyectos li { grid-template-columns: 1fr; gap: 2px; padding: 18px 12px; }
-  .cuando { padding-top: 0; }
+  .proyectos li { grid-template-columns: 1fr; gap: 2px; padding: 18px 0; }
   .anios li { grid-template-columns: 52px minmax(0, 1fr); gap: 4px 14px; }
   .anios .t { text-align: left; }
   .anios .q { grid-column: 1 / -1; }
-  td.d { display: none; }
-  thead th.d { display: none; }
+}
+@media (min-width: 901px) and (max-height: 760px) {
+  .lado { padding-top: 36px; padding-bottom: 20px; }
+  main { padding-top: 36px; }
+  .indice { margin-top: 24px; }
+  .indice a { min-height: 30px; }
+  .enlaces a { min-height: 40px; }
+}
+@media (max-width: 560px) {
+  thead { position: absolute; left: -9999px; }
+  tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 16px; border-bottom: 1px solid var(--linea); padding: 12px 0; }
+  tbody th, tbody td { border: 0; padding: 0; }
+  td.h { padding-right: 0; }
+  td.d { grid-column: 1 / -1; font-size: 0.875rem; margin-top: 2px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .indice a::before, .contacto .mail, .proyectos li { transition: none; }
+  .indice a::before, .contacto .mail, .proyectos h3 { transition: none; }
 }
-@media print { .lado { position: static; height: auto; } .indice { display: none; } .pagina { display: block; } }
+@media print {
+  :root { --papel: #fff; --tinta: #000; --tinta-2: #333; --tinta-3: #555; --linea: #ccc; --verde: #0a6b4d; }
+  .pagina { display: block; }
+  .lado { position: static; height: auto; padding-top: 0; overflow: visible; }
+  .lado nav, .saltar, .mail { display: none; }
+  .enlaces a::after { content: " (" attr(href) ")"; font-weight: 400; }
+  .proyectos li, .anios li, tr { break-inside: avoid; }
+}
 </style>
 </head>
 <body>
@@ -128,7 +153,8 @@ footer { margin-top: 88px; color: var(--tinta-3); font-size: 0.875rem; }
 <header class="lado">
   <h1>Enzo Cespedes</h1>
   <p class="puesto">Desarrollador Full Stack<br>Backend Node.js y SQL Server</p>
-  <p class="resumen">Hago sistemas de gestión y saco adelante sistemas viejos. Primero el problema, después la tecnología.</p>
+  <p class="resumen">Hago sistemas de gestión y llevo sistemas viejos a la web. Primero el problema, después la tecnología.</p>
+  <p class="busco">Busco un equipo de producto. Remoto o híbrido en Rosario o Buenos Aires.</p>
 
   <nav aria-label="Secciones">
     <ul class="indice">
@@ -153,26 +179,16 @@ footer { margin-top: 88px; color: var(--tinta-3); font-size: 0.875rem; }
 <section aria-labelledby="sobre">
   <h2 id="sobre">Sobre mí</h2>
   <p>Soy de San Nicolás y hace cinco años que hago sistemas de gestión: ERP, contabilidad, comprobantes fiscales, transporte y flota. Trabajo sobre todo en el back, con <b>Node.js y SQL Server</b>, y hago front cuando hace falta.</p>
-  <p>Antes de escribir una línea de código me siento con el cliente: qué funciona, qué no, qué quiere conservar y qué descartar. Después modelo el sistema y lo discuto con el equipo. Recién al final defino el stack. No me caso con ninguna tecnología: elijo la que mejor resuelve el problema.</p>
-  <p>En estos años mergeé <b>406 pull requests</b>, con más de <b>2.000 commits en 21 repositorios</b>, y con el equipo llevamos a la web <b>tres sistemas viejos</b>: dos desde Visual FoxPro y uno desde VB6. Una migración, para mí, no es traducir el sistema anterior: es rediseñarlo para sacarle los problemas que venía arrastrando.</p>
-  <p>Desde 2025 coordino el equipo y una cuarta parte de mis horas se va en eso: planificar sprints, repartir tareas, revisar código y hablar con el cliente. Sigo programando todos los días.</p>
-  <p>Creo que un buen sistema no es el que usa las últimas tecnologías, sino el que le sirve a la gente que lo usa todos los días. Busco un equipo de producto que trabaje con ese criterio. Remoto o híbrido en Rosario o Buenos Aires.</p>
+  <p>Antes de escribir código me siento con quien usa el sistema. Después modelo y lo discuto con el equipo. Recién al final defino el stack: no me caso con ninguna tecnología, elijo la que mejor resuelve el problema.</p>
+  <p>En estos años llevo <b>406 pull requests</b> mergeados, con más de <b>2.000 commits en 21 repositorios</b>, y con el equipo pasamos a la web <b>tres sistemas viejos</b>: dos desde Visual FoxPro y uno desde VB6.</p>
+  <p>Desde 2025 también coordino el equipo: planifico sprints, reparto tareas, reviso código y hablo con el cliente. En 2026 eso es una cuarta parte de mis horas. Sigo programando todos los días.</p>
+  <p>Creo que un buen sistema no es el que usa las últimas tecnologías, sino el que le sirve a la gente que lo usa todos los días.</p>
 </section>
 
 <section aria-labelledby="proyectos">
   <h2 id="proyectos">Proyectos</h2>
-  <p>Todo esto es trabajo real para clientes. No pongo los nombres porque no me corresponde; los números salen del historial de cada repositorio.</p>
+  <p>Todo esto es trabajo real para clientes, del más reciente al más viejo. No pongo los nombres porque no me corresponde; los números salen del historial de cada repositorio.</p>
   <ol class="proyectos">
-    <li>
-      <span class="cuando">2024 — 2026</span>
-      <div>
-        <h3>ERP multiempresa, migrado desde VB6</h3>
-        <p>Un mismo código base funcionando sobre tres bases de datos de empresas distintas, con la lógica contable del sistema original replicada con precisión decimal exacta.</p>
-        <p>Es el proyecto al que más horas le puse. Hice pantallas, comprobantes fiscales (facturación electrónica, retenciones, percepciones), contabilidad y reportes, y terminé coordinando al equipo.</p>
-        <p class="con">Node.js · Express · SQL Server · Stored procedures</p>
-        <p class="cuanto"><b>852</b> commits (29 % del repositorio) · <b>155</b> pull requests · <b>1.834</b> horas</p>
-      </div>
-    </li>
     <li>
       <span class="cuando">2026 — hoy</span>
       <div>
@@ -180,7 +196,7 @@ footer { margin-top: 88px; color: var(--tinta-3); font-size: 0.875rem; }
         <p>El sistema de origen tenía 264 formularios, 128 informes y 110 tablas. Lo llevamos a web como producto configurable por cliente: 170 de 175 pantallas del MVP a octubre de 2026.</p>
         <p>Acá coordino más de lo que programo: somos cuatro, con pull requests y sprints. Relevamos el FoxPro pantalla por pantalla para decidir qué se migraba y qué no. Armé las herramientas de migración (generadores de módulos y un migrador de datos que verifica el contenido), que después se reusaron en otro proyecto.</p>
         <p class="con">Node.js · SQL Server · Nunjucks · Herramientas propias</p>
-        <p class="cuanto"><b>135</b> commits · <b>49</b> pull requests · rol de coordinación</p>
+        <p class="cuanto"><b>135</b> commits · <b>49</b> pull requests · <b>95</b> horas</p>
       </div>
     </li>
     <li>
@@ -194,22 +210,13 @@ footer { margin-top: 88px; color: var(--tinta-3); font-size: 0.875rem; }
       </div>
     </li>
     <li>
-      <span class="cuando">2023 — 2025</span>
+      <span class="cuando">2024 — 2026</span>
       <div>
-        <h3>Sistema de transporte de pasajeros</h3>
-        <p>Gestión operativa de una empresa de transporte: diagramación de turnos, combustible, siniestros y reportes.</p>
-        <p>Mi primer proyecto grande. Lo hice de punta a punta, del relevamiento a producción, y soy el autor principal del repositorio.</p>
-        <p class="con">Node.js · Express · SQL Server</p>
-        <p class="cuanto"><b>330</b> commits (69 % del repositorio) · <b>84</b> pull requests · <b>893</b> horas</p>
-      </div>
-    </li>
-    <li>
-      <span class="cuando">2023 — 2024</span>
-      <div>
-        <h3>Backoffice para un corralón de materiales</h3>
-        <p>Sistema interno de gestión conectado a la base del sistema del cliente: ABM, pantallas, stored procedures y reportes.</p>
-        <p class="con">Node.js · SQL Server · MySQL</p>
-        <p class="cuanto"><b>185</b> commits (44 % del repositorio) · <b>18</b> pull requests · <b>384</b> horas</p>
+        <h3>ERP multiempresa, migrado desde VB6</h3>
+        <p>Un mismo código base funcionando sobre tres bases de datos de empresas distintas, con la lógica contable del sistema original replicada con precisión decimal exacta.</p>
+        <p>Es el proyecto al que más horas le puse. Hice pantallas, comprobantes fiscales (facturación electrónica, retenciones, percepciones), contabilidad y reportes, y terminé coordinando al equipo.</p>
+        <p class="con">Node.js · Express · SQL Server · Stored procedures</p>
+        <p class="cuanto"><b>852</b> commits (29&nbsp;% del repositorio) · <b>155</b> pull requests · <b>1.834</b> horas</p>
       </div>
     </li>
     <li>
@@ -221,11 +228,31 @@ footer { margin-top: 88px; color: var(--tinta-3); font-size: 0.875rem; }
         <p class="cuanto"><b>113</b> commits · <b>40</b> pull requests · <b>192</b> horas</p>
       </div>
     </li>
+    <li>
+      <span class="cuando">2023 — 2025</span>
+      <div>
+        <h3>Sistema de transporte de pasajeros</h3>
+        <p>Gestión operativa de una empresa de transporte: diagramación de turnos, combustible, siniestros y reportes.</p>
+        <p>Mi primer proyecto grande. Lo hice de punta a punta, del relevamiento a producción, y soy el autor principal del repositorio.</p>
+        <p class="con">Node.js · Express · SQL Server</p>
+        <p class="cuanto"><b>330</b> commits (69&nbsp;% del repositorio) · <b>84</b> pull requests · <b>893</b> horas</p>
+      </div>
+    </li>
+    <li>
+      <span class="cuando">2023 — 2024</span>
+      <div>
+        <h3>Backoffice para un corralón de materiales</h3>
+        <p>Sistema interno de gestión conectado a la base del sistema del cliente: ABM, pantallas, stored procedures y reportes.</p>
+        <p class="con">Node.js · SQL Server · MySQL</p>
+        <p class="cuanto"><b>185</b> commits (44&nbsp;% del repositorio) · <b>18</b> pull requests · <b>384</b> horas</p>
+      </div>
+    </li>
   </ol>
 </section>
 
 <section aria-labelledby="capacidades">
   <h2 id="capacidades">Capacidades</h2>
+  <p class="stack"><b>Stack:</b> Node.js, Express, SQL Server (stored procedures), MySQL y Nunjucks en el back; JavaScript, React 19, TypeScript y Tailwind en el front.</p>
   <p>Qué sé hacer y cuántas horas le dediqué. Cargo un parte por cada tramo que trabajo, así que lo tengo contado.</p>
   <div class="envoltura"><table>
     <caption>Un parte puede tocar varios temas, así que las horas no suman el total.</caption>
@@ -244,42 +271,43 @@ footer { margin-top: 88px; color: var(--tinta-3); font-size: 0.875rem; }
       <tr><th scope="row">Coordinación de equipo</th><td class="h">592</td><td class="d">ERP multiempresa, flota, carga</td></tr>
     </tbody>
   </table></div>
+  <p class="nota origen">Las horas salen de mis partes de trabajo; los commits y mi peso en cada repositorio, del historial de git filtrado por mi autoría; los pull requests, de GitHub. Los totales incluyen trabajos menores que no listo acá, y las horas por año están redondeadas.</p>
+  <p class="nota">Los repositorios son privados porque el código es de los clientes, así que no lo puedo mostrar. Lo que sí puedo es contar en detalle cómo resolví cada cosa. Las horas por tema salen de buscar palabras en los partes: sirven para ver proporciones, no como medida exacta. Datos a noviembre de 2026.</p>
 </section>
 
 <section aria-labelledby="recorrido">
   <h2 id="recorrido">Recorrido</h2>
   <p>Horas registradas por año y qué cambió en cada uno. Son <b>3.898 horas</b> en 1.123 partes.</p>
   <ol class="anios">
-    <li><span class="a">2021</span><span class="t">113 h</span><span class="q">Primeros trabajos web: sitios y tiendas online.</span></li>
-    <li><span class="a">2022</span><span class="t">99 h</span><span class="q">Mantenimiento de portales y sistemas municipales.</span></li>
-    <li><span class="a">2023</span><span class="t">414 h</span><span class="q">Primer proyecto grande: el sistema de transporte de pasajeros.</span></li>
-    <li><span class="a">2024</span><span class="t">919 h</span><span class="q">Dos proyectos de gestión en paralelo. Empiezo a planificar y repartir tareas.</span></li>
-    <li><span class="a">2025</span><span class="t">1.244 h</span><span class="q">ERP multiempresa a tiempo completo. La coordinación pasa a ser el 21 % de mis horas.</span></li>
-    <li><span class="a">2026</span><span class="t">1.110 h</span><span class="q">Dos migraciones desde Visual FoxPro y primer proyecto con React y TypeScript.</span></li>
+    <li><span class="a">2021</span><span class="t">113&nbsp;h</span><span class="q">Primeros trabajos web: sitios y tiendas online.</span></li>
+    <li><span class="a">2022</span><span class="t">99&nbsp;h</span><span class="q">Mantenimiento de portales y sistemas municipales.</span></li>
+    <li><span class="a">2023</span><span class="t">414&nbsp;h</span><span class="q">Primer proyecto grande: el sistema de transporte de pasajeros.</span></li>
+    <li><span class="a">2024</span><span class="t">919&nbsp;h</span><span class="q">Dos proyectos de gestión en paralelo. Empiezo a planificar y repartir tareas.</span></li>
+    <li><span class="a">2025</span><span class="t">1.244&nbsp;h</span><span class="q">ERP multiempresa a tiempo completo. La coordinación pasa a ser el 21&nbsp;% de mis horas.</span></li>
+    <li><span class="a">2026</span><span class="t">1.110&nbsp;h</span><span class="q">Dos migraciones desde Visual FoxPro y primer proyecto con React y TypeScript.</span></li>
   </ol>
 </section>
 
 <section aria-labelledby="metodo">
   <h2 id="metodo">Cómo trabajo</h2>
-  <p>Primero el problema, después la tecnología.</p>
   <ul class="metodo">
     <li><b>Relevo antes de escribir código.</b> Me siento con quien usa el sistema y pregunto qué funciona, qué no y qué quiere conservar.</li>
     <li><b>Una migración no es una traducción.</b> Es la oportunidad de sacar los problemas que el sistema viejo arrastraba.</li>
     <li><b>No doy nada por supuesto.</b> Los nombres de tablas y columnas los saco de la base real, no de documentación vieja.</li>
-    <li><b>Nadie mergea su propio código.</b> Pull requests con revisión, revisiones automáticas y tests antes de subir a producción.</li>
+    <li><b>Todo cambio pasa por pull request.</b> Con revisión de código, revisiones automáticas y tests antes de subir a producción.</li>
     <li><b>Uso asistentes de IA, con controles.</b> Apruebo el plan antes de que se escriba código, y nada se mergea sin revisión, tests y prueba manual. Lo que se sube lo reviso yo.</li>
   </ul>
-  <p class="nota origen">Nada de lo que hay en esta página está escrito de memoria. Las horas salen de mis partes de trabajo; los commits y mi peso en cada repositorio, del historial de git filtrado por mi autoría; los pull requests, de GitHub. Los repositorios son privados porque el código es de los clientes, así que no lo puedo mostrar. Lo que sí puedo es contar en detalle cómo resolví cada cosa. Las horas por tema salen de buscar palabras en los partes: sirven para ver proporciones, no como medida exacta. Datos a noviembre de 2026.</p>
 </section>
 
 <section class="contacto" aria-labelledby="contacto">
   <h2 id="contacto">Contacto</h2>
   <p>Si lo que viste te sirve para tu equipo, escribime y lo charlamos.</p>
   <a class="mail" href="mailto:cespedesenzojoel@gmail.com">Escribirme por correo</a>
-  <footer>Enzo Cespedes · San Nicolás de los Arroyos, Buenos Aires · 2026</footer>
 </section>
 
 </main>
+
+<footer>Enzo Cespedes · San Nicolás de los Arroyos, Buenos Aires · 2026</footer>
 </div>
 
 <script>
@@ -297,6 +325,9 @@ footer { margin-top: 88px; color: var(--tinta-3); font-size: 0.875rem; }
     if (visible) marcar(visible.target.querySelector('h2').id);
   }, { rootMargin: '-20% 0px -60% 0px' });
   document.querySelectorAll('main section').forEach(s => visor.observe(s));
+  addEventListener('scroll', () => {
+    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) marcar('contacto');
+  }, { passive: true });
   marcar('sobre');
 })();
 </script>
