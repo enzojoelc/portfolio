@@ -5,224 +5,300 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Enzo Cespedes — Desarrollador Full Stack</title>
 <meta name="description" content="Desarrollador full stack con foco en backend. Sistemas de gestión, migración de sistemas legacy a web y coordinación de equipo.">
+<meta property="og:title" content="Enzo Cespedes — Desarrollador Full Stack">
+<meta property="og:description" content="Cinco años haciendo sistemas de gestión. 406 pull requests, tres migraciones de sistemas legacy a web.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#fbfcfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1417" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a6b4d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='15' fill='%23fbfcfc'%3EEC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --fondo: #f7f6f3; --panel: #ffffff; --texto: #1c1d1f; --suave: #5d6168;
-  --linea: #e2e0da; --acento: #1f5f8b; --acento-suave: #e6eff5; --max: 960px;
+  --papel: #fbfcfc; --tinta: #10161b; --tinta-2: #47525c; --tinta-3: #6a7580;
+  --linea: #dfe4e7; --realce: #f0f4f3; --verde: #0a6b4d; --verde-tenue: #dcefe8;
+  --titulos: "Bricolage Grotesque", "Hanken Grotesk", sans-serif;
+  --texto: "Hanken Grotesk", "Segoe UI", Roboto, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --fondo: #15171a; --panel: #1d2024; --texto: #ecebe7; --suave: #a2a7af;
-          --linea: #2e3238; --acento: #7fb8dd; --acento-suave: #1f2c36; }
+  :root { --papel: #0f1417; --tinta: #e9eeee; --tinta-2: #b3bdc1; --tinta-3: #8b979d;
+          --linea: #262f34; --realce: #171e22; --verde: #63c9a3; --verde-tenue: #17332a; }
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--fondo); color: var(--texto);
-  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-a { color: var(--acento); }
-.contenedor { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-nav { position: sticky; top: 0; background: var(--fondo); border-bottom: 1px solid var(--linea); z-index: 2; }
-nav .contenedor { display: flex; gap: 20px; align-items: center; height: 52px; overflow-x: auto; white-space: nowrap; }
-nav strong { margin-right: auto; }
-nav a { color: var(--suave); text-decoration: none; font-size: 14px; }
-nav a:hover { color: var(--texto); }
-header { padding: 72px 0 40px; }
-h1 { font-size: clamp(34px, 6vw, 52px); line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
-.rol { font-size: clamp(17px, 2.4vw, 21px); color: var(--suave); margin: 0 0 20px; max-width: 46ch; }
-.intro { max-width: 62ch; margin: 0 0 28px; }
-.botones { display: flex; flex-wrap: wrap; gap: 10px; }
-.boton { display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid var(--acento); }
-.boton.principal { background: var(--acento); color: var(--fondo); }
-.cifras { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 40px 0 0; padding: 0; list-style: none; }
-.cifras li { background: var(--panel); border: 1px solid var(--linea); border-radius: 10px; padding: 16px; }
-.cifras b { display: block; font-size: 28px; line-height: 1.1; font-variant-numeric: tabular-nums; }
-.cifras span { color: var(--suave); font-size: 14px; }
-section { padding: 48px 0; border-top: 1px solid var(--linea); }
-h2 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.01em; }
-.bajada { color: var(--suave); margin: 0 0 24px; max-width: 62ch; }
-.proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
-article { background: var(--panel); border: 1px solid var(--linea); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; }
-article h3 { margin: 0 0 4px; font-size: 18px; line-height: 1.3; }
-.periodo { color: var(--suave); font-size: 14px; margin: 0 0 12px; }
-article p { margin: 0 0 12px; }
-.etiquetas { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; list-style: none; }
-.etiquetas li { background: var(--acento-suave); color: var(--acento); border-radius: 999px; padding: 2px 10px; font-size: 13px; }
-.numeros { margin: auto 0 0; padding: 12px 0 0; border-top: 1px solid var(--linea); color: var(--suave); font-size: 14px; }
-.numeros b { color: var(--texto); }
-.tabla { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: 15px; }
-th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--linea); vertical-align: top; }
-th { color: var(--suave); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
-td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.linea { list-style: none; margin: 0; padding: 0; }
-.linea li { display: grid; grid-template-columns: 64px 96px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--linea); }
-.linea .anio { font-weight: 700; }
-.linea .horas { color: var(--suave); font-variant-numeric: tabular-nums; }
-.dos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-.dos ul { margin: 0; padding-left: 20px; }
-.dos li { margin-bottom: 8px; }
-.nota { color: var(--suave); font-size: 14px; max-width: 70ch; }
-footer { padding: 40px 0 64px; border-top: 1px solid var(--linea); color: var(--suave); font-size: 14px; }
-@media (max-width: 520px) { .linea li { grid-template-columns: 52px 1fr; } .linea .horas { grid-column: 2; } .linea .que { grid-column: 1 / -1; } }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scrollbar-color: var(--linea) var(--papel); -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 1.0625rem/1.65 var(--texto);
+  font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--verde); color: var(--papel); }
+a { color: inherit; text-decoration-color: var(--verde); text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; }
+a:hover { color: var(--verde); }
+:focus-visible { outline: 2px solid var(--verde); outline-offset: 3px; border-radius: 2px; }
+.saltar { position: absolute; left: -9999px; }
+.saltar:focus { left: 16px; top: 16px; background: var(--papel); padding: 8px 12px; z-index: 5; }
+b, strong { font-weight: 600; }
+
+.pagina { max-width: 1160px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; }
+
+/* Columna fija: quién soy y por dónde seguir */
+.lado { position: sticky; top: 0; align-self: start; height: 100vh; height: 100dvh; padding: 88px 0 56px; display: flex; flex-direction: column; }
+h1 { font: 700 clamp(2.6rem, 4.6vw, 3.6rem)/1.02 var(--titulos); letter-spacing: -0.035em; margin: 0; }
+.puesto { font: 500 1.25rem/1.35 var(--titulos); letter-spacing: -0.01em; margin: 14px 0 0; }
+.resumen { color: var(--tinta-2); margin: 18px 0 0; max-width: 34ch; }
+.indice { margin: 56px 0 0; padding: 0; list-style: none; position: relative; }
+.indice a { display: flex; align-items: center; gap: 14px; min-height: 40px; text-decoration: none; color: var(--tinta-3);
+  font-weight: 600; font-size: 0.9375rem; transition: color 0.25s; }
+.indice a::before { content: ""; width: 28px; height: 1.5px; background: currentColor; transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+.indice a:hover, .indice a[aria-current="true"] { color: var(--tinta); }
+.indice a[aria-current="true"]::before { width: 64px; background: var(--verde); }
+.enlaces { margin: auto 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 24px; font-weight: 600; font-size: 0.9375rem; }
+.enlaces a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* Columna de contenido */
+main { padding: 88px 0 72px; min-width: 0; }
+section + section { margin-top: 104px; }
+h2 { font: 700 1.5rem/1.2 var(--titulos); letter-spacing: -0.02em; margin: 0 0 20px; scroll-margin-top: 32px; }
+section > p { color: var(--tinta-2); max-width: 62ch; margin: 0 0 16px; }
+section > p b { color: var(--tinta); }
+.nota { font-size: 0.9375rem; color: var(--tinta-3); }
+.nota.origen { margin-top: 28px; }
+
+.proyectos { list-style: none; margin: 28px -20px 0; padding: 0; }
+.proyectos li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 20px; padding: 22px 20px; border-radius: 8px; transition: background 0.2s; }
+.proyectos li:hover { background: var(--realce); }
+.cuando { color: var(--tinta-3); font-size: 0.875rem; font-weight: 600; padding-top: 5px; }
+h3 { font: 600 1.125rem/1.35 var(--titulos); letter-spacing: -0.01em; margin: 0 0 8px; }
+.proyectos p { margin: 0 0 10px; color: var(--tinta-2); font-size: 1rem; }
+.proyectos .con { color: var(--verde); font-size: 0.875rem; font-weight: 600; margin: 12px 0 0; }
+.proyectos .cuanto { color: var(--tinta-3); font-size: 0.875rem; margin: 6px 0 0; }
+.proyectos .cuanto b { color: var(--tinta); }
+
+.envoltura { overflow-x: auto; margin: 24px 0 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+caption { text-align: left; color: var(--tinta-3); font-size: 0.9375rem; padding-bottom: 12px; caption-side: top; }
+th, td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--linea); vertical-align: baseline; }
+thead th { font-size: 0.875rem; font-weight: 600; color: var(--tinta-3); border-bottom-color: var(--tinta); }
+tbody th { font-weight: 500; }
+td.h, th.h { text-align: right; white-space: nowrap; font-weight: 600; padding-right: 24px; }
+td.d { color: var(--tinta-3); font-size: 0.9375rem; }
+
+.anios { list-style: none; margin: 24px 0 0; padding: 0; }
+.anios li { display: grid; grid-template-columns: 56px 84px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--linea); }
+.anios .a { font: 600 1.0625rem/1.65 var(--titulos); }
+.anios .t { color: var(--tinta-3); text-align: right; }
+.anios .q { color: var(--tinta-2); }
+
+.metodo { margin: 20px 0 0; padding: 0; list-style: none; }
+.metodo li { padding: 14px 0; border-bottom: 1px solid var(--linea); color: var(--tinta-2); max-width: 62ch; }
+.metodo li b { color: var(--tinta); }
+
+.contacto p { font: 500 clamp(1.35rem, 2.6vw, 1.75rem)/1.35 var(--titulos); letter-spacing: -0.015em; color: var(--tinta); max-width: 26ch; }
+.contacto .mail { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: var(--verde); color: var(--papel);
+  font-weight: 600; text-decoration: none; margin-top: 8px; transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s; }
+.contacto .mail:hover { color: var(--papel); transform: translateY(-2px); box-shadow: 0 8px 20px -10px var(--verde); }
+footer { margin-top: 88px; color: var(--tinta-3); font-size: 0.875rem; }
+
+@media (max-width: 900px) {
+  .pagina { display: block; padding: 0 20px; }
+  .lado { position: static; height: auto; padding: 56px 0 0; }
+  .indice { display: none; }
+  .enlaces { margin-top: 24px; }
+  main { padding-top: 56px; }
+  section + section { margin-top: 72px; }
+  .proyectos { margin-left: -12px; margin-right: -12px; }
+  .proyectos li { grid-template-columns: 1fr; gap: 2px; padding: 18px 12px; }
+  .cuando { padding-top: 0; }
+  .anios li { grid-template-columns: 52px minmax(0, 1fr); gap: 4px 14px; }
+  .anios .t { text-align: left; }
+  .anios .q { grid-column: 1 / -1; }
+  td.d { display: none; }
+  thead th.d { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .indice a::before, .contacto .mail, .proyectos li { transition: none; }
+}
+@media print { .lado { position: static; height: auto; } .indice { display: none; } .pagina { display: block; } }
 </style>
 </head>
 <body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 
-<nav><div class="contenedor">
-  <strong>Enzo Cespedes</strong>
-  <a href="#proyectos">Proyectos</a>
-  <a href="#capacidades">Capacidades</a>
-  <a href="#evolucion">Evolución</a>
-  <a href="#metodo">Cómo trabajo</a>
-  <a href="#contacto">Contacto</a>
-</div></nav>
+<div class="pagina">
 
-<header><div class="contenedor">
+<header class="lado">
   <h1>Enzo Cespedes</h1>
-  <p class="rol">Desarrollador Full Stack · Backend Node.js y SQL Server · Tech Lead</p>
-  <p class="intro">Hace cinco años que hago sistemas de gestión: ERP, contabilidad, comprobantes fiscales, transporte y flota. Me especializo en llevar sistemas viejos (Visual FoxPro, VB6) a la web, y desde 2025 además coordino el equipo.</p>
-  <div class="botones">
-    <a class="boton principal" href="#contacto">Contacto</a>
-    <a class="boton" href="#proyectos">Ver proyectos</a>
-  </div>
-  <ul class="cifras">
-    <li><b>5 años</b><span>de desarrollo, desde 2021</span></li>
-    <li><b>406</b><span>pull requests mergeados</span></li>
-    <li><b>2.007</b><span>commits en 21 repositorios</span></li>
-    <li><b>3.898 h</b><span>registradas en partes de trabajo</span></li>
-    <li><b>3</b><span>migraciones de sistemas legacy</span></li>
+  <p class="puesto">Desarrollador Full Stack<br>Backend Node.js y SQL Server</p>
+  <p class="resumen">Hago sistemas de gestión y saco adelante sistemas viejos. Primero el problema, después la tecnología.</p>
+
+  <nav aria-label="Secciones">
+    <ul class="indice">
+      <li><a href="#sobre">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#capacidades">Capacidades</a></li>
+      <li><a href="#recorrido">Recorrido</a></li>
+      <li><a href="#metodo">Cómo trabajo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <ul class="enlaces">
+    <li><a href="https://www.linkedin.com/in/enzojoelcespedes">LinkedIn</a></li>
+    <li><a href="https://github.com/enzojoelc">GitHub</a></li>
+    <li><a href="mailto:cespedesenzojoel@gmail.com">Correo</a></li>
   </ul>
-</div></header>
+</header>
 
-<section id="proyectos"><div class="contenedor">
-  <h2>Proyectos</h2>
-  <p class="bajada">Trabajo real para clientes. Los nombres no figuran por confidencialidad; los números salen del historial de cada repositorio.</p>
-  <div class="proyectos">
+<main id="contenido">
 
-    <article>
-      <h3>ERP multiempresa — migración desde VB6</h3>
-      <p class="periodo">2024 – 2026</p>
-      <p>Un mismo código base funcionando sobre tres bases de datos de empresas distintas, con la lógica contable del sistema original replicada con precisión decimal exacta.</p>
-      <p>Pantallas, comprobantes fiscales (facturación electrónica, retenciones, percepciones), contabilidad, reportes y coordinación del equipo.</p>
-      <ul class="etiquetas"><li>Node.js</li><li>Express</li><li>SQL Server</li><li>Stored procedures</li></ul>
-      <p class="numeros"><b>852</b> commits (29 % del repo) · <b>155</b> PRs · <b>1.834</b> h</p>
-    </article>
+<section aria-labelledby="sobre">
+  <h2 id="sobre">Sobre mí</h2>
+  <p>Soy de San Nicolás y hace cinco años que hago sistemas de gestión: ERP, contabilidad, comprobantes fiscales, transporte y flota. Trabajo sobre todo en el back, con <b>Node.js y SQL Server</b>, y hago front cuando hace falta.</p>
+  <p>Antes de escribir una línea de código me siento con el cliente: qué funciona, qué no, qué quiere conservar y qué descartar. Después modelo el sistema y lo discuto con el equipo. Recién al final defino el stack. No me caso con ninguna tecnología: elijo la que mejor resuelve el problema.</p>
+  <p>En estos años mergeé <b>406 pull requests</b>, con más de <b>2.000 commits en 21 repositorios</b>, y con el equipo llevamos a la web <b>tres sistemas viejos</b>: dos desde Visual FoxPro y uno desde VB6. Una migración, para mí, no es traducir el sistema anterior: es rediseñarlo para sacarle los problemas que venía arrastrando.</p>
+  <p>Desde 2025 coordino el equipo y una cuarta parte de mis horas se va en eso: planificar sprints, repartir tareas, revisar código y hablar con el cliente. Sigo programando todos los días.</p>
+  <p>Creo que un buen sistema no es el que usa las últimas tecnologías, sino el que le sirve a la gente que lo usa todos los días. Busco un equipo de producto que trabaje con ese criterio. Remoto o híbrido en Rosario o Buenos Aires.</p>
+</section>
 
-    <article>
-      <h3>ERP de transporte de carga — migración desde Visual FoxPro</h3>
-      <p class="periodo">2026 – actualidad</p>
-      <p>Sistema de origen de 264 formularios, 128 informes y 110 tablas, llevado a web como producto configurable por cliente. 170 de 175 pantallas del MVP a octubre de 2026.</p>
-      <p>Coordinación de un equipo de 4 con pull requests y sprints. Armé las herramientas de migración (generadores de módulos y migrador de datos con verificación de contenido), que después se reusaron en otro proyecto.</p>
-      <ul class="etiquetas"><li>Node.js</li><li>SQL Server</li><li>Nunjucks</li><li>Tooling</li></ul>
-      <p class="numeros"><b>135</b> commits · <b>49</b> PRs · rol de coordinación</p>
-    </article>
+<section aria-labelledby="proyectos">
+  <h2 id="proyectos">Proyectos</h2>
+  <p>Todo esto es trabajo real para clientes. No pongo los nombres porque no me corresponde; los números salen del historial de cada repositorio.</p>
+  <ol class="proyectos">
+    <li>
+      <span class="cuando">2024 — 2026</span>
+      <div>
+        <h3>ERP multiempresa, migrado desde VB6</h3>
+        <p>Un mismo código base funcionando sobre tres bases de datos de empresas distintas, con la lógica contable del sistema original replicada con precisión decimal exacta.</p>
+        <p>Es el proyecto al que más horas le puse. Hice pantallas, comprobantes fiscales (facturación electrónica, retenciones, percepciones), contabilidad y reportes, y terminé coordinando al equipo.</p>
+        <p class="con">Node.js · Express · SQL Server · Stored procedures</p>
+        <p class="cuanto"><b>852</b> commits (29 % del repositorio) · <b>155</b> pull requests · <b>1.834</b> horas</p>
+      </div>
+    </li>
+    <li>
+      <span class="cuando">2026 — hoy</span>
+      <div>
+        <h3>ERP de transporte de carga, migrado desde Visual FoxPro</h3>
+        <p>El sistema de origen tenía 264 formularios, 128 informes y 110 tablas. Lo llevamos a web como producto configurable por cliente: 170 de 175 pantallas del MVP a octubre de 2026.</p>
+        <p>Acá coordino más de lo que programo: somos cuatro, con pull requests y sprints. Relevamos el FoxPro pantalla por pantalla para decidir qué se migraba y qué no. Armé las herramientas de migración (generadores de módulos y un migrador de datos que verifica el contenido), que después se reusaron en otro proyecto.</p>
+        <p class="con">Node.js · SQL Server · Nunjucks · Herramientas propias</p>
+        <p class="cuanto"><b>135</b> commits · <b>49</b> pull requests · rol de coordinación</p>
+      </div>
+    </li>
+    <li>
+      <span class="cuando">2026 — hoy</span>
+      <div>
+        <h3>Gestión de flota: API y panel</h3>
+        <p>Sistema de flota y taller migrado desde Visual FoxPro, con API propia y panel web.</p>
+        <p>Mi primer proyecto con React y TypeScript. Hice pantallas, endpoints, autenticación, hasheo de claves y conexión cifrada a la base. Tiene 26 archivos de tests automáticos y cada subida a producción sigue un guion con verificación.</p>
+        <p class="con">Node.js · SQL Server · React 19 · TypeScript · Tailwind</p>
+        <p class="cuanto"><b>302</b> commits en dos repositorios · <b>55</b> pull requests · <b>198</b> horas</p>
+      </div>
+    </li>
+    <li>
+      <span class="cuando">2023 — 2025</span>
+      <div>
+        <h3>Sistema de transporte de pasajeros</h3>
+        <p>Gestión operativa de una empresa de transporte: diagramación de turnos, combustible, siniestros y reportes.</p>
+        <p>Mi primer proyecto grande. Lo hice de punta a punta, del relevamiento a producción, y soy el autor principal del repositorio.</p>
+        <p class="con">Node.js · Express · SQL Server</p>
+        <p class="cuanto"><b>330</b> commits (69 % del repositorio) · <b>84</b> pull requests · <b>893</b> horas</p>
+      </div>
+    </li>
+    <li>
+      <span class="cuando">2023 — 2024</span>
+      <div>
+        <h3>Backoffice para un corralón de materiales</h3>
+        <p>Sistema interno de gestión conectado a la base del sistema del cliente: ABM, pantallas, stored procedures y reportes.</p>
+        <p class="con">Node.js · SQL Server · MySQL</p>
+        <p class="cuanto"><b>185</b> commits (44 % del repositorio) · <b>18</b> pull requests · <b>384</b> horas</p>
+      </div>
+    </li>
+    <li>
+      <span class="cuando">2024 — 2025</span>
+      <div>
+        <h3>Gestión interna, taller y portal de choferes</h3>
+        <p>Mantenimiento y mejoras sobre tres sistemas en producción que no hice yo, el mayor con más de 3.800 commits de historial. Acá aprendí a meterme en código ajeno sin romperlo.</p>
+        <p class="con">Node.js · SQL Server · MySQL</p>
+        <p class="cuanto"><b>113</b> commits · <b>40</b> pull requests · <b>192</b> horas</p>
+      </div>
+    </li>
+  </ol>
+</section>
 
-    <article>
-      <h3>Gestión de flota — API y panel</h3>
-      <p class="periodo">2026 – actualidad</p>
-      <p>Sistema de flota y taller migrado desde Visual FoxPro, con API propia y panel web.</p>
-      <p>Pantallas, endpoints, autenticación, hasheo de claves, conexión cifrada a la base, 26 archivos de tests automáticos y subidas a producción con guion y verificación.</p>
-      <ul class="etiquetas"><li>Node.js</li><li>SQL Server</li><li>React 19</li><li>TypeScript</li><li>Tailwind</li></ul>
-      <p class="numeros"><b>302</b> commits en dos repos · <b>55</b> PRs · <b>198</b> h</p>
-    </article>
-
-    <article>
-      <h3>Sistema de transporte de pasajeros</h3>
-      <p class="periodo">2023 – 2025</p>
-      <p>Gestión operativa de una empresa de transporte: diagramación de turnos, combustible, siniestros y reportes.</p>
-      <p>Trabajo de punta a punta, del relevamiento a producción. Soy el autor principal del repositorio.</p>
-      <ul class="etiquetas"><li>Node.js</li><li>Express</li><li>SQL Server</li><li>Documentación</li></ul>
-      <p class="numeros"><b>330</b> commits (69 % del repo) · <b>84</b> PRs · <b>893</b> h</p>
-    </article>
-
-    <article>
-      <h3>Backoffice para un corralón de materiales</h3>
-      <p class="periodo">2023 – 2024</p>
-      <p>Sistema interno de gestión conectado a la base del sistema del cliente.</p>
-      <p>ABM, pantallas, stored procedures, reportes y corrección de errores.</p>
-      <ul class="etiquetas"><li>Node.js</li><li>SQL Server</li><li>MySQL</li></ul>
-      <p class="numeros"><b>185</b> commits (44 % del repo) · <b>18</b> PRs · <b>384</b> h</p>
-    </article>
-
-    <article>
-      <h3>Gestión interna, taller y portal de choferes</h3>
-      <p class="periodo">2024 – 2025</p>
-      <p>Mantenimiento y mejoras sobre tres sistemas en producción, el mayor con más de 3.800 commits de historial hechos por otros equipos.</p>
-      <p>Corrección de errores, stored procedures, reportes y migración de módulos.</p>
-      <ul class="etiquetas"><li>Node.js</li><li>SQL Server</li><li>MySQL</li></ul>
-      <p class="numeros"><b>113</b> commits · <b>40</b> PRs · <b>192</b> h</p>
-    </article>
-
-  </div>
-</div></section>
-
-<section id="capacidades"><div class="contenedor">
-  <h2>Qué sé hacer y dónde lo hice</h2>
-  <p class="bajada">Horas de los partes de trabajo que mencionan cada tema. Un parte puede tocar varios, así que no suman el total.</p>
-  <div class="tabla"><table>
-    <thead><tr><th>Capacidad</th><th>Horas</th><th>Dónde</th></tr></thead>
+<section aria-labelledby="capacidades">
+  <h2 id="capacidades">Capacidades</h2>
+  <p>Qué sé hacer y cuántas horas le dediqué. Cargo un parte por cada tramo que trabajo, así que lo tengo contado.</p>
+  <div class="envoltura"><table>
+    <caption>Un parte puede tocar varios temas, así que las horas no suman el total.</caption>
+    <thead><tr><th scope="col">Tema</th><th scope="col" class="h">Horas</th><th scope="col" class="d">Dónde</th></tr></thead>
     <tbody>
-      <tr><td>Pantallas y front (HTML, JavaScript; React y TypeScript desde 2026)</td><td class="n">1.603</td><td>ERP multiempresa, pasajeros, corralón, flota</td></tr>
-      <tr><td>Corrección de errores en producción</td><td class="n">1.403</td><td>Todos</td></tr>
-      <tr><td>Pull requests, merges y ramas</td><td class="n">1.040</td><td>ERP multiempresa, pasajeros, flota, carga</td></tr>
-      <tr><td>Stored procedures y base de datos (SQL Server)</td><td class="n">944</td><td>ERP multiempresa, pasajeros, corralón</td></tr>
-      <tr><td>ABM</td><td class="n">934</td><td>Pasajeros, corralón</td></tr>
-      <tr><td>Reportes y listados (PDF, Excel)</td><td class="n">897</td><td>ERP multiempresa, pasajeros</td></tr>
-      <tr><td>Relevamiento con clientes y usuarios</td><td class="n">837</td><td>Todos</td></tr>
-      <tr><td>Comprobantes fiscales argentinos (ARBA, IIBB, facturación)</td><td class="n">674</td><td>ERP multiempresa</td></tr>
-      <tr><td>Tests</td><td class="n">637</td><td>ERP multiempresa, flota, carga</td></tr>
-      <tr><td>Documentación y diagramas</td><td class="n">632</td><td>Pasajeros, carga</td></tr>
-      <tr><td>Coordinación de equipo</td><td class="n">592</td><td>ERP multiempresa, flota, carga</td></tr>
+      <tr><th scope="row">Pantallas y front</th><td class="h">1.603</td><td class="d">ERP multiempresa, pasajeros, corralón, flota</td></tr>
+      <tr><th scope="row">Corrección de errores en producción</th><td class="h">1.403</td><td class="d">Todos</td></tr>
+      <tr><th scope="row">Pull requests, merges y ramas</th><td class="h">1.040</td><td class="d">ERP multiempresa, pasajeros, flota, carga</td></tr>
+      <tr><th scope="row">Stored procedures y base de datos</th><td class="h">944</td><td class="d">ERP multiempresa, pasajeros, corralón</td></tr>
+      <tr><th scope="row">ABM</th><td class="h">934</td><td class="d">Pasajeros, corralón</td></tr>
+      <tr><th scope="row">Reportes y listados en PDF y Excel</th><td class="h">897</td><td class="d">ERP multiempresa, pasajeros</td></tr>
+      <tr><th scope="row">Relevamiento con clientes y usuarios</th><td class="h">837</td><td class="d">Todos</td></tr>
+      <tr><th scope="row">Comprobantes fiscales argentinos</th><td class="h">674</td><td class="d">ERP multiempresa</td></tr>
+      <tr><th scope="row">Tests</th><td class="h">637</td><td class="d">ERP multiempresa, flota, carga</td></tr>
+      <tr><th scope="row">Documentación y diagramas</th><td class="h">632</td><td class="d">Pasajeros, carga</td></tr>
+      <tr><th scope="row">Coordinación de equipo</th><td class="h">592</td><td class="d">ERP multiempresa, flota, carga</td></tr>
     </tbody>
   </table></div>
-</div></section>
+</section>
 
-<section id="evolucion"><div class="contenedor">
-  <h2>Evolución</h2>
-  <p class="bajada">Horas registradas por año y qué cambió en cada uno.</p>
-  <ul class="linea">
-    <li><span class="anio">2021</span><span class="horas">113 h</span><span class="que">Primeros trabajos web: sitios y tiendas online.</span></li>
-    <li><span class="anio">2022</span><span class="horas">99 h</span><span class="que">Mantenimiento de portales y sistemas municipales.</span></li>
-    <li><span class="anio">2023</span><span class="horas">414 h</span><span class="que">Primer proyecto grande: sistema de transporte de pasajeros.</span></li>
-    <li><span class="anio">2024</span><span class="horas">919 h</span><span class="que">Dos proyectos de gestión en paralelo. Empiezo a planificar y repartir tareas.</span></li>
-    <li><span class="anio">2025</span><span class="horas">1.244 h</span><span class="que">ERP multiempresa a tiempo completo. La coordinación pasa a ser el 21 % de mis horas.</span></li>
-    <li><span class="anio">2026</span><span class="horas">1.110 h</span><span class="que">Dos migraciones desde Visual FoxPro y primer proyecto con React y TypeScript. Coordinación: 25 % de las horas.</span></li>
+<section aria-labelledby="recorrido">
+  <h2 id="recorrido">Recorrido</h2>
+  <p>Horas registradas por año y qué cambió en cada uno. Son <b>3.898 horas</b> en 1.123 partes.</p>
+  <ol class="anios">
+    <li><span class="a">2021</span><span class="t">113 h</span><span class="q">Primeros trabajos web: sitios y tiendas online.</span></li>
+    <li><span class="a">2022</span><span class="t">99 h</span><span class="q">Mantenimiento de portales y sistemas municipales.</span></li>
+    <li><span class="a">2023</span><span class="t">414 h</span><span class="q">Primer proyecto grande: el sistema de transporte de pasajeros.</span></li>
+    <li><span class="a">2024</span><span class="t">919 h</span><span class="q">Dos proyectos de gestión en paralelo. Empiezo a planificar y repartir tareas.</span></li>
+    <li><span class="a">2025</span><span class="t">1.244 h</span><span class="q">ERP multiempresa a tiempo completo. La coordinación pasa a ser el 21 % de mis horas.</span></li>
+    <li><span class="a">2026</span><span class="t">1.110 h</span><span class="q">Dos migraciones desde Visual FoxPro y primer proyecto con React y TypeScript.</span></li>
+  </ol>
+</section>
+
+<section aria-labelledby="metodo">
+  <h2 id="metodo">Cómo trabajo</h2>
+  <p>Primero el problema, después la tecnología.</p>
+  <ul class="metodo">
+    <li><b>Relevo antes de escribir código.</b> Me siento con quien usa el sistema y pregunto qué funciona, qué no y qué quiere conservar.</li>
+    <li><b>Una migración no es una traducción.</b> Es la oportunidad de sacar los problemas que el sistema viejo arrastraba.</li>
+    <li><b>No doy nada por supuesto.</b> Los nombres de tablas y columnas los saco de la base real, no de documentación vieja.</li>
+    <li><b>Nadie mergea su propio código.</b> Pull requests con revisión, revisiones automáticas y tests antes de subir a producción.</li>
+    <li><b>Uso asistentes de IA, con controles.</b> Apruebo el plan antes de que se escriba código, y nada se mergea sin revisión, tests y prueba manual. Lo que se sube lo reviso yo.</li>
   </ul>
-</div></section>
+  <p class="nota origen">Nada de lo que hay en esta página está escrito de memoria. Las horas salen de mis partes de trabajo; los commits y mi peso en cada repositorio, del historial de git filtrado por mi autoría; los pull requests, de GitHub. Los repositorios son privados porque el código es de los clientes, así que no lo puedo mostrar. Lo que sí puedo es contar en detalle cómo resolví cada cosa. Las horas por tema salen de buscar palabras en los partes: sirven para ver proporciones, no como medida exacta. Datos a noviembre de 2026.</p>
+</section>
 
-<section id="metodo"><div class="contenedor">
-  <h2>Cómo trabajo</h2>
-  <p class="bajada">Primero el problema, después la tecnología.</p>
-  <div class="dos">
-    <ul>
-      <li>Relevo con el cliente qué funciona, qué no y qué quiere conservar antes de escribir código.</li>
-      <li>Una migración no es una traducción del sistema anterior: es la oportunidad de sacar los problemas heredados.</li>
-      <li>Los nombres de tablas y columnas se verifican contra la base, no contra documentación vieja.</li>
-    </ul>
-    <ul>
-      <li>Pull requests con revisión: nadie mergea su propio código sin que otro lo vea.</li>
-      <li>Revisiones automáticas de código y tests antes de subir a producción.</li>
-      <li>Uso asistentes de IA para desarrollar, con controles: plan aprobado antes de codear, revisión, tests y prueba manual antes de cada merge.</li>
-    </ul>
-  </div>
-</div></section>
+<section class="contacto" aria-labelledby="contacto">
+  <h2 id="contacto">Contacto</h2>
+  <p>Si lo que viste te sirve para tu equipo, escribime y lo charlamos.</p>
+  <a class="mail" href="mailto:cespedesenzojoel@gmail.com">Escribirme por correo</a>
+  <footer>Enzo Cespedes · San Nicolás de los Arroyos, Buenos Aires · 2026</footer>
+</section>
 
-<section id="fuentes"><div class="contenedor">
-  <h2>De dónde salen los números</h2>
-  <p class="nota">Nada de esto está escrito de memoria. Las horas salen de mis partes de trabajo (1.123 registros entre 2021 y 2026). Los commits y el peso en cada repositorio, del historial de git filtrado por mi autoría. Los pull requests, de GitHub. Los repositorios son privados porque el código es de los clientes, pero el método es repetible: en una entrevista puedo correr los mismos scripts y mostrar cualquier proyecto en pantalla.</p>
-  <p class="nota">Límites: las horas por capacidad se calculan buscando palabras en el texto de los partes, así que sirven para ver proporciones y no como medida exacta. Datos a noviembre de 2026.</p>
-</div></section>
+</main>
+</div>
 
-<section id="contacto"><div class="contenedor">
-  <h2>Contacto</h2>
-  <p class="bajada">Busco sumarme como desarrollador a un equipo de producto con buenas prácticas instaladas. San Nicolás de los Arroyos, Buenos Aires. Remoto o híbrido (Rosario / Buenos Aires).</p>
-  <div class="botones">
-    <a class="boton principal" href="https://www.linkedin.com/in/enzojoelcespedes">LinkedIn</a>
-    <a class="boton" href="https://github.com/enzojoelc">GitHub</a>
-    <a class="boton" href="mailto:cespedesenzojoel@gmail.com">Correo</a>
-  </div>
-</div></section>
-
-<footer><div class="contenedor">Enzo Cespedes · 2026</div></footer>
-
+<script>
+// Marca en el índice la sección que se está leyendo.
+(() => {
+  const enlaces = [...document.querySelectorAll('.indice a')];
+  if (!enlaces.length || !('IntersectionObserver' in window)) return;
+  const porId = new Map(enlaces.map(a => [a.getAttribute('href').slice(1), a]));
+  const marcar = id => enlaces.forEach(a => {
+    if (a === porId.get(id)) a.setAttribute('aria-current', 'true');
+    else a.removeAttribute('aria-current');
+  });
+  const visor = new IntersectionObserver(entradas => {
+    const visible = entradas.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+    if (visible) marcar(visible.target.querySelector('h2').id);
+  }, { rootMargin: '-20% 0px -60% 0px' });
+  document.querySelectorAll('main section').forEach(s => visor.observe(s));
+  marcar('sobre');
+})();
+</script>
 </body>
 </html>
