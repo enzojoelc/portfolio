@@ -350,7 +350,7 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
   <tbody><tr><td class="n">00018422</td><td>12/11/2026</td><td>Cereales del Paraná S.A.</td><td>San Nicolás → Rosario</td><td>AB 312 KT</td><td class="r">29.800</td><td class="r">$ 412.300,00</td><td><span class="est ok">Facturada</span></td></tr><tr><td class="n">00018423</td><td>12/11/2026</td><td>Molinos La Esperanza S.R.L.</td><td>Ramallo → Bahía Blanca</td><td>AE 908 LM</td><td class="r">30.150</td><td class="r">$ 1.286.400,00</td><td><span class="est viaje">En viaje</span></td></tr><tr><td class="n">00018424</td><td>13/11/2026</td><td>Acería Norte S.A.</td><td>San Nicolás → Villa Constitución</td><td>AC 455 FZ</td><td class="r">27.600</td><td class="r">$ 268.900,00</td><td><span class="est viaje">En viaje</span></td></tr><tr><td class="n">00018425</td><td>13/11/2026</td><td>Cereales del Paraná S.A.</td><td>Pergamino → San Nicolás</td><td>AD 127 PQ</td><td class="r">28.900</td><td class="r">$ 389.700,00</td><td><span class="est carga">Cargando</span></td></tr><tr><td class="n">00018426</td><td>14/11/2026</td><td>Agroinsumos Pampa S.A.</td><td>San Nicolás → Junín</td><td>AB 312 KT</td><td class="r">26.300</td><td class="r">$ 523.100,00</td><td><span class="est pend">Pendiente</span></td></tr><tr><td class="n">00018427</td><td>14/11/2026</td><td>Molinos La Esperanza S.R.L.</td><td>Ramallo → Rosario</td><td>AF 220 RS</td><td class="r">30.000</td><td class="r">$ 401.800,00</td><td><span class="est pend">Pendiente</span></td></tr></tbody><tfoot><tr><td colspan="5">6 órdenes</td><td class="r">172.750</td><td class="r">$ 3.282.200,00</td><td></td></tr></tfoot></table></div>
  </div></div>
 </figure>
-    <p class="pie-mk"><b>ERP de transporte de carga.</b> El listado de órdenes de carga, el corazón del sistema. Coordiné la migración de este módulo desde el FoxPro y armé los generadores con los que el equipo hizo los ABM.</p>
+    <p class="pie-mk"><b>ERP de transporte de carga.</b> El listado de órdenes de carga, el corazón del sistema. Este módulo lo hicieron mis compañeros; yo armé los generadores y el migrador con los que el equipo pasa los módulos desde el FoxPro.</p>
   </div>
   <div class="pantalla">
     <figure class="mk mk-nova" aria-label="Ejemplo de pantalla: órdenes de trabajo del taller">
@@ -363,7 +363,7 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
   <table><thead><tr><th>OT</th><th>Unidad</th><th>Falla o tarea</th><th>Mecánico</th><th>Apertura</th><th>Estado</th></tr></thead><tbody><tr><td class="n">OT-1042</td><td>Camión<small>AB 312 KT</small></td><td>Cambio de cubiertas eje 2</td><td>Ruiz, M.</td><td>11/11/2026</td><td><span class="ns fin">Cerrada</span></td></tr><tr><td class="n">OT-1043</td><td>Pala cargadora<small>L5</small></td><td>Pérdida de aceite hidráulico</td><td>Benítez, A.</td><td>12/11/2026</td><td><span class="ns rep">En reparación</span></td></tr><tr><td class="n">OT-1044</td><td>Semi<small>AC 019 HJ</small></td><td>Revisión de frenos</td><td>Ruiz, M.</td><td>13/11/2026</td><td><span class="ns esp">Esperando repuesto</span></td></tr><tr><td class="n">OT-1045</td><td>Camión<small>AE 908 LM</small></td><td>Service 60.000 km</td><td>Paz, F.</td><td>14/11/2026</td><td><span class="ns rep">En reparación</span></td></tr><tr><td class="n">OT-1046</td><td>Autoelevador<small>AE-03</small></td><td>No arranca en frío</td><td>Benítez, A.</td><td>14/11/2026</td><td><span class="ns ab">Abierta</span></td></tr></tbody></table>
  </div></div>
 </figure>
-    <p class="pie-mk"><b>Gestión de flota.</b> Las órdenes de trabajo del taller, en React y TypeScript. Hice el circuito de alta, seguimiento y cierre de las órdenes, y los indicadores de arriba.</p>
+    <p class="pie-mk"><b>Gestión de flota.</b> Las órdenes de trabajo del taller, en React y TypeScript. El circuito de las órdenes lo hizo un compañero; yo trabajé el listado (estados, uso en celular) y hice la mayor parte de los indicadores del panel.</p>
   </div>
   <div class="pantalla">
     <figure class="mk mk-mc" aria-label="Ejemplo de pantalla: cuenta corriente de un cliente">
@@ -377,7 +377,7 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
   <div class="mk-mc-pie"><span>Saldo al 15/11/2026: <b>$ 966.790,00</b></span><span>Vencido: <b>$ 354.200,00</b> · A vencer: <b>$ 612.590,00</b></span><button>Imprimir</button><button>Exportar a Excel</button></div>
  </div></div>
 </figure>
-    <p class="pie-mk"><b>ERP multiempresa.</b> La cuenta corriente de un cliente, con el selector de empresa arriba: el mismo sistema atiende a tres empresas. Hice los comprobantes y los saldos, que tienen que cerrar al centavo con la contabilidad.</p>
+    <p class="pie-mk"><b>ERP multiempresa.</b> La cuenta corriente de un cliente, con el selector de empresa arriba: el mismo sistema atiende a tres empresas. Hice esa parte multiempresa y trabajé en comprobantes y reportes junto al resto del equipo.</p>
   </div>
 </section>
 
