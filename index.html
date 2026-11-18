@@ -119,6 +119,7 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
 .mk caption { display: none; }
 .mk .r { text-align: right; } .mk .n { white-space: nowrap; }
 .mk th, .mk td { white-space: nowrap; }
+.mk-tr-main td { white-space: normal; }
 .mk-nova-main td:nth-child(3) { white-space: normal; min-width: 150px; }
 .mk-erp-tabla tbody td:nth-child(3), .mk-erp-tabla tbody td:nth-child(4) { white-space: normal; min-width: 130px; }
 .mk-erp-app { grid-template-columns: 150px minmax(0, 1fr) !important; }
@@ -188,6 +189,47 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
 .mk-mc-pie span:first-child { flex: 1; }
 .mk-mc-pie span { white-space: nowrap; }
 .mk-mc-pie button { background: #fff; border: 1px solid #ccc; border-radius: 3px; padding: 4px 10px; font: 12px Arial, sans-serif; color: #333; }
+
+/* Portal de empleados: Bootstrap con barra roja */
+.mk-ev-app, .mk-tr-app, .mk-vg-app { overflow-x: auto; font: 400 12px/1.5 "Helvetica Neue", Arial, sans-serif; background: #fff; color: #333; }
+.mk-ev-app nav, .mk-tr-app nav, .mk-vg-app nav { display: flex; align-items: center; gap: 16px; color: #e8e8e8; padding: 9px 16px; }
+.mk-ev-app nav b, .mk-tr-app nav b, .mk-vg-app nav b { color: #fff; font-size: 14px; }
+.mk-ev-app nav .on, .mk-tr-app nav .on, .mk-vg-app nav .on { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.mk-ev-main, .mk-tr-main, .mk-vg-main { padding: 14px 16px; }
+.mk-ev-main h4, .mk-tr-main h4, .mk-vg-main h4 { margin: 0 0 10px; font-size: 16px; font-weight: 500; }
+.mk-ev-main th, .mk-tr-main th, .mk-vg-main th { text-align: left; font-weight: 600; padding: 6px 8px; border-bottom: 2px solid #ddd; }
+.mk-ev-main td, .mk-tr-main td, .mk-vg-main td { padding: 6px 8px; border-bottom: 1px solid #e5e5e5; }
+.mk-ev-app nav { background: #8e1b1b; }
+.mk-ev-main h4 { color: #8e1b1b; }
+.mk-ev-filtros, .mk-vg-filtros { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; margin-bottom: 10px; }
+.mk-ev-filtros label { display: flex; flex-direction: column; font-weight: 600; font-size: 11px; }
+.mk-ev-filtros span, .mk-vg-filtros span { border: 1px solid #ccc; border-radius: 3px; padding: 3px 8px; min-width: 90px; font-weight: 400; background: #fff; }
+.mk-ev-app button, .mk-tr-app button, .mk-vg-app button { font: 12px Arial, sans-serif; border-radius: 3px; padding: 3px 9px; border: 1px solid #ccc; background: #fff; color: #333; }
+.mk-ev-filtros button { background: #8e1b1b; color: #fff; border-color: #8e1b1b; }
+.mk-ev .acc button { margin-right: 4px; } .mk-ev .acc .ap { background: #2e7d32; color: #fff; border-color: #2e7d32; } .mk-ev .acc .re { background: #fff; color: #a32020; border-color: #a32020; }
+.mk-ev .acc span { color: #6b6b6b; font-size: 11px; }
+.ev-e { font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 3px; }
+.ev-e.ok { background: #dff0d8; color: #2f6a2f; } .ev-e.pe { background: #fcf8e3; color: #7a5b12; } .ev-e.re { background: #f2dede; color: #8a2a2a; }
+/* Transporte de pasajeros: grilla de diagrama */
+.mk-tr-app nav { background: #1d4e89; }
+.mk-tr-tit { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.mk-tr-tit h4 { margin: 0; color: #1d4e89; }
+.mk-tr-tit button { margin-left: 6px; } .mk-tr-tit .pr { background: #1d4e89; color: #fff; border-color: #1d4e89; }
+.mk-tr-main th { background: #eef3f9; text-align: center; } .mk-tr-main th:nth-child(-n+2) { text-align: left; }
+.mk-tr-main td { text-align: center; border: 1px solid #e1e6ec; line-height: 1.3; }
+.mk-tr-main td.n, .mk-tr-main td.ch { text-align: left; } .mk-tr-main td.ch { font-weight: 600; }
+.mk-tr-main td b { display: block; color: #1d4e89; } .mk-tr-main td span { font-size: 10.5px; color: #5d6670; }
+.mk-tr-main td.fr { background: #f4f6f8; color: #5d6670; } .mk-tr-main td.li { background: #fdf3e1; color: #7a5600; }
+.mk-tr-main td.er { background: #fbe4e4; outline: 2px solid #c62828; outline-offset: -2px; }
+.mk-tr-val { margin-top: 10px; background: #fbe4e4; border: 1px solid #efc1c1; border-radius: 3px; padding: 7px 10px; color: #7d1f1f; }
+.mk-tr-val b { margin-right: 6px; }
+/* Corralón: Bootstrap con barra verde petróleo */
+.mk-vg-app nav { background: #2f5d50; }
+.mk-vg-main h4 { color: #2f5d50; }
+.mk-vg-filtros .bus { min-width: 200px; color: #757575; }
+.mk-vg-main td small { display: block; color: #6b6b6b; }
+.mk-vg-main td.sin { color: #b3261e; font-weight: 600; }
+.mk-vg .acc button { color: #2f5d50; border-color: #2f5d50; }
 
 @media (max-width: 900px) {
   .pagina { display: block; padding: 0 20px; }
@@ -379,6 +421,45 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
 </figure>
     <p class="pie-mk"><b>ERP multiempresa.</b> La cuenta corriente de un cliente, con el selector de empresa arriba: el mismo sistema atiende a tres empresas. Hice esa parte multiempresa y trabajé en comprobantes y reportes junto al resto del equipo.</p>
   </div>
+  <div class="pantalla">
+    <figure class="mk mk-ev" aria-label="Ejemplo de pantalla: pedidos de los choferes">
+<div class="mk-barra"><span></span><span></span><span></span><em>Portal de empleados — Pedidos</em></div>
+<div class="mk-ev-app">
+ <nav><b>Portal de empleados</b><span>Diagramas</span><span>Planillas</span><span class="on">Pedidos</span><span>Citaciones</span><span>Siniestros</span></nav>
+ <div class="mk-ev-main">
+  <h4>Pedidos de los choferes</h4>
+  <div class="mk-ev-filtros"><label>Chofer<span>Todos</span></label><label>Tipo<span>Todos</span></label><label>Mes<span>Noviembre</span></label><label>Año<span>2026</span></label><button>Filtrar</button></div>
+  <table><thead><tr><th>Empleado</th><th>Fecha envío</th><th>Tipo</th><th>Destino</th><th>Desde</th><th>Hasta</th><th>Estado</th><th>Acción</th></tr></thead><tbody><tr><td>Álvarez, Martín</td><td>10/11/2026</td><td>Franco</td><td>Tráfico</td><td>21/11/2026</td><td>21/11/2026</td><td><span class="ev-e ok">Aprobado</span></td><td class="acc"></td></tr><tr><td>Domínguez, Sergio</td><td>11/11/2026</td><td>Cambio de turno</td><td>Tráfico</td><td>18/11/2026</td><td>18/11/2026</td><td><span class="ev-e pe">Pendiente</span></td><td class="acc"><button class="ap">Aprobar</button><button class="re">Rechazar</button></td></tr><tr><td>Ledesma, Carlos</td><td>12/11/2026</td><td>Vacaciones</td><td>Personal</td><td>01/12/2026</td><td>14/12/2026</td><td><span class="ev-e pe">Pendiente</span></td><td class="acc"><button class="ap">Aprobar</button><button class="re">Rechazar</button></td></tr><tr><td>Ortiz, Hernán</td><td>12/11/2026</td><td>Franco</td><td>Tráfico</td><td>19/11/2026</td><td>19/11/2026</td><td><span class="ev-e re">Rechazado</span></td><td class="acc"><span>Sin cobertura ese día</span></td></tr><tr><td>Vera, Gustavo</td><td>13/11/2026</td><td>Adelanto de haberes</td><td>Personal</td><td>—</td><td>—</td><td><span class="ev-e ok">Aprobado</span></td><td class="acc"></td></tr></tbody></table>
+ </div></div>
+</figure>
+    <p class="pie-mk"><b>Gestión interna y portal de choferes.</b> Los pedidos de los choferes: francos, cambios de turno, vacaciones. Hice la segunda versión del módulo, con los filtros y el circuito de aprobación y rechazo.</p>
+  </div>
+  <div class="pantalla">
+    <figure class="mk mk-tr" aria-label="Ejemplo de pantalla: diagrama semanal de servicios">
+<div class="mk-barra"><span></span><span></span><span></span><em>Gestión de transporte — Diagramas</em></div>
+<div class="mk-tr-app">
+ <nav><b>Transporte</b><span class="on">Diagramas</span><span>Planillas</span><span>Choferes</span><span>Coches</span><span>Pedidos</span><span>Reportes</span></nav>
+ <div class="mk-tr-main">
+  <div class="mk-tr-tit"><h4>Diagrama semanal · 16 al 22 de noviembre de 2026</h4><span><button>Validar</button><button class="pr">Publicar</button></span></div>
+  <table><thead><tr><th>N°</th><th>Chofer</th><th>Lun 16</th><th>Mar 17</th><th>Mié 18</th><th>Jue 19</th><th>Vie 20</th><th>Sáb 21</th><th>Dom 22</th></tr></thead><tbody><tr><td class="n">1043</td><td class="ch">Álvarez, M.</td><td><b>501</b><span>Coche 12 · T1</span></td><td><b>501</b><span>Coche 12 · T1</span></td><td><b>501</b><span>Coche 12 · T1</span></td><td><b>501</b><span>Coche 12 · T1</span></td><td><b>501</b><span>Coche 14 · T1</span></td><td class="fr">Franco</td><td class="fr">Franco</td></tr><tr><td class="n">1088</td><td class="ch">Benítez, J.</td><td><b>503</b><span>Coche 27 · T2</span></td><td><b>503</b><span>Coche 27 · T2</span></td><td class="fr">Franco</td><td><b>503</b><span>Coche 27 · T2</span></td><td><b>503</b><span>Coche 27 · T2</span></td><td><b>503</b><span>Coche 31 · T1</span></td><td class="fr">Franco</td></tr><tr><td class="n">1102</td><td class="ch">Castro, D.</td><td class="fr">Franco</td><td><b>501</b><span>Coche 14 · T2</span></td><td><b>501</b><span>Coche 14 · T2</span></td><td><b>501</b><span>Coche 14 · T2</span></td><td><b>501</b><span>Coche 14 · T2</span></td><td><b>501</b><span>Coche 12 · T2</span></td><td><b>501</b><span>Coche 12 · T1</span></td></tr><tr><td class="n">1127</td><td class="ch">Domínguez, S.</td><td><b>502</b><span>Coche 8 · T1</span></td><td><b>502</b><span>Coche 8 · T1</span></td><td><b>502</b><span>Coche 8 · T1</span></td><td class="er"><b>502</b><span>Coche 8 · T3</span></td><td><b>502</b><span>Coche 8 · T1</span></td><td class="fr">Franco</td><td class="fr">Franco</td></tr><tr><td class="n">1150</td><td class="ch">Ledesma, C.</td><td class="li">Licencia</td><td class="li">Licencia</td><td class="li">Licencia</td><td><b>503</b><span>Coche 31 · T2</span></td><td><b>503</b><span>Coche 31 · T2</span></td><td><b>503</b><span>Coche 27 · T1</span></td><td class="fr">Franco</td></tr></tbody></table>
+  <div class="mk-tr-val"><b>Errores de la validación (1)</b> Domínguez, S.: entre el miércoles y el jueves quedan 9 h de descanso; el mínimo es 12 h.</div>
+ </div></div>
+</figure>
+    <p class="pie-mk"><b>Sistema de transporte de pasajeros.</b> El diagrama semanal de servicios: qué chofer maneja qué coche, en qué línea y turno. Hice el módulo de diagramas en sus dos versiones, incluida la validación de descansos antes de publicar.</p>
+  </div>
+  <div class="pantalla">
+    <figure class="mk mk-vg" aria-label="Ejemplo de pantalla: buscador de artículos">
+<div class="mk-barra"><span></span><span></span><span></span><em>Gestión del corralón — Buscar artículos</em></div>
+<div class="mk-vg-app">
+ <nav><b>Gestión</b><span>Ventas</span><span class="on">Artículos</span><span>Remitos</span><span>Reportes</span><span>Usuarios</span></nav>
+ <div class="mk-vg-main">
+  <h4>Buscar artículos</h4>
+  <div class="mk-vg-filtros"><span class="bus">Buscar código o nombre</span><span>Todas las familias</span><span>Todas las marcas</span><span>Contado</span><span>Lista 2</span></div>
+  <table><thead><tr><th>Acciones</th><th>Código</th><th class="r">Stock</th><th>Descripción</th><th class="r">Precio</th><th class="r">Precio c/IVA</th></tr></thead><tbody><tr><td class="acc"><button>Ver</button></td><td class="n">10012</td><td class="r">342</td><td>Cemento portland x 50 kg<small>Loma Negra</small></td><td class="r">$ 9.850,00</td><td class="r">$ 11.918,50</td></tr><tr><td class="acc"><button>Ver</button></td><td class="n">10027</td><td class="r">118</td><td>Cal hidratada x 25 kg<small>Cacique</small></td><td class="r">$ 4.120,00</td><td class="r">$ 4.985,20</td></tr><tr><td class="acc"><button>Ver</button></td><td class="n">20140</td><td class="r">560</td><td>Hierro ADN 8 mm x 12 m<small>Acindar</small></td><td class="r">$ 7.340,00</td><td class="r">$ 8.881,40</td></tr><tr><td class="acc"><button>Ver</button></td><td class="n">20151</td><td class="r sin">0</td><td>Hierro ADN 10 mm x 12 m<small>Acindar</small></td><td class="r">$ 11.290,00</td><td class="r">$ 13.660,90</td></tr><tr><td class="acc"><button>Ver</button></td><td class="n">30310</td><td class="r">4.200</td><td>Ladrillo hueco 12x18x33<small>Cerámica del Sur</small></td><td class="r">$ 615,00</td><td class="r">$ 744,15</td></tr><tr><td class="acc"><button>Ver</button></td><td class="n">41022</td><td class="r">36</td><td>Arena gruesa x m³<small>Granel</small></td><td class="r">$ 38.500,00</td><td class="r">$ 46.585,00</td></tr></tbody></table>
+ </div></div>
+</figure>
+    <p class="pie-mk"><b>Backoffice para un corralón.</b> El buscador de artículos: filtra por familia, marca y condición de venta, y muestra el precio según la lista elegida. Lo hice yo, junto con los reportes del sistema.</p>
+  </div>
 </section>
 
 <section aria-labelledby="capacidades">
@@ -466,8 +547,8 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
 // Las pantallas de ejemplo se dibujan a un ancho fijo y se achican para entrar en su columna.
 // Si achicadas quedarían ilegibles (celular), se dejan a tamaño real con desplazamiento.
 (() => {
-  const anchos = { 'mk-erp-app': 1040, 'mk-nova-app': 820, 'mk-mc-app': 860 };
-  const apps = [...document.querySelectorAll('.mk-erp-app, .mk-nova-app, .mk-mc-app')];
+  const anchos = { 'mk-erp-app': 1040, 'mk-nova-app': 820, 'mk-mc-app': 860, 'mk-ev-app': 960, 'mk-tr-app': 900, 'mk-vg-app': 820 };
+  const apps = [...document.querySelectorAll('.mk-erp-app, .mk-nova-app, .mk-mc-app, .mk-ev-app, .mk-tr-app, .mk-vg-app')];
   if (!apps.length || !('zoom' in document.body.style)) return;
   const ajustar = () => apps.forEach(app => {
     const ancho = anchos[[...app.classList].find(c => c in anchos)];
