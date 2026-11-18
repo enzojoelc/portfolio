@@ -13,7 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a6b4d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='15' fill='%23fbfcfc'%3EEC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   color-scheme: light dark;
@@ -105,6 +105,90 @@ td.d { color: var(--tinta-3); font-size: 0.9375rem; }
 @media (hover: hover) { .contacto .mail:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -10px var(--verde); } }
 footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.875rem; }
 
+/* Pantallas de ejemplo: cada una con el lenguaje visual de su sistema */
+.pantalla { margin: 32px 0 0; }
+.pantalla + .pantalla { margin-top: 48px; }
+.pie-mk { color: var(--tinta-2); max-width: 62ch; margin: 14px 0 0; font-size: 1rem; }
+.pie-mk b { color: var(--tinta); }
+.mk { margin: 0; border: 1px solid var(--linea); border-radius: 10px; overflow: hidden; background: #fff; color: #222;
+  box-shadow: 0 18px 40px -24px rgba(16, 22, 27, 0.45); font-variant-numeric: tabular-nums; }
+.mk-barra { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #eceef0; border-bottom: 1px solid #dcdfe2; }
+.mk-barra span { width: 10px; height: 10px; border-radius: 50%; background: #c9cdd1; }
+.mk-barra em { font-style: normal; font-size: 12px; color: #5c6670; margin-left: 10px; font-family: var(--texto); }
+.mk table { width: 100%; border-collapse: collapse; }
+.mk caption { display: none; }
+.mk .r { text-align: right; } .mk .n { white-space: nowrap; }
+.mk th, .mk td { white-space: nowrap; }
+.mk-nova-main td:nth-child(3) { white-space: normal; min-width: 150px; }
+.mk-erp-tabla tbody td:nth-child(3), .mk-erp-tabla tbody td:nth-child(4) { white-space: normal; min-width: 130px; }
+.mk-erp-app { grid-template-columns: 150px minmax(0, 1fr) !important; }
+.mk-erp-main { min-width: 0; }
+.mk-erp-app, .mk-nova-app, .mk-mc-app { overflow-x: auto; }
+.mk { overflow-x: auto; }
+/* ERP de carga: Poppins, fondo gris, acento único */
+.mk-erp-app { display: grid; grid-template-columns: 150px minmax(640px, 1fr); font: 400 12px/1.6 Poppins, Arial, sans-serif; background: #e9ecef; color: #495057; }
+.mk-erp-app aside { background: #1f3a4d; color: #c9d6df; padding: 14px 0; }
+.mk-erp-app aside b { display: block; color: #fff; font-weight: 600; font-size: 14px; padding: 0 16px 12px; }
+.mk-erp-app aside ul { list-style: none; margin: 0; padding: 0; }
+.mk-erp-app aside li { padding: 6px 16px; }
+.mk-erp-app aside li.on { background: #2b7a9b; color: #fff; }
+.mk-erp-main { padding: 16px; }
+.mk-erp-tit { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.mk-erp-tit h4 { margin: 0; font: 500 16px Poppins, Arial, sans-serif; color: #252422; }
+.mk-erp-app button { font: 500 12px Poppins, Arial, sans-serif; background: #2b7a9b; color: #fff; border: 0; border-radius: 4px; padding: 6px 12px; }
+.mk-erp-filtros { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; background: #fff; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.mk-erp-filtros label { display: flex; flex-direction: column; font-size: 11px; }
+.mk-erp-filtros span { border: 1px solid #dee2e6; border-radius: 4px; padding: 3px 8px; min-width: 96px; color: #252422; background: #fff; }
+.mk-erp-tabla { background: #fff; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.mk-erp-tabla th { text-align: left; font-weight: 500; color: #252422; padding: 8px; border-bottom: 2px solid #dee2e6; white-space: nowrap; }
+.mk-erp-tabla td { padding: 7px 8px; border-bottom: 1px solid #eef0f2; white-space: nowrap; }
+.mk-erp-tabla tfoot td { font-weight: 600; color: #252422; border-bottom: 0; }
+.mk-erp-tabla .est { font-size: 11px; padding: 2px 8px; border-radius: 10px; }
+.est.ok { background: #e3f2e9; color: #1e6b3f; } .est.viaje { background: #e2eff5; color: #1f5f7b; }
+.est.carga { background: #fff3d6; color: #7a5600; } .est.pend { background: #eef0f2; color: #5c6670; }
+/* Flota: React + Tailwind, denso, estados con color */
+.mk-nova-app { font: 400 12px/1.5 ui-sans-serif, system-ui, sans-serif; background: #f8fafc; color: #0f172a; min-width: 0; }
+.mk-nova-app > * { min-width: 700px; }
+.mk-nova-app header { display: flex; align-items: center; gap: 24px; background: #0f172a; color: #e2e8f0; padding: 10px 16px; }
+.mk-nova-app header b { color: #fff; font-size: 14px; }
+.mk-nova-app header nav { display: flex; gap: 16px; flex: 1; }
+.mk-nova-app header nav .on { color: #fff; border-bottom: 2px solid #22c55e; padding-bottom: 2px; }
+.mk-nova-app header i { font-style: normal; width: 26px; height: 26px; border-radius: 50%; background: #334155; display: grid; place-items: center; font-size: 11px; }
+.mk-nova-main { padding: 16px; }
+.mk-nova-kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px; }
+.mk-nova-kpi div { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px; color: #475569; }
+.mk-nova-kpi b { display: block; font-size: 18px; color: #0f172a; }
+.mk-nova-tit { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+.mk-nova-tit h4 { margin: 0; font-size: 15px; font-weight: 600; }
+.mk-nova-tit .tabs { display: flex; gap: 2px; background: #e2e8f0; border-radius: 6px; padding: 2px; flex: 1; max-width: 230px; }
+.mk-nova-tit .tabs span { padding: 3px 10px; border-radius: 4px; color: #475569; }
+.mk-nova-tit .tabs .on { background: #fff; color: #0f172a; font-weight: 600; }
+.mk-nova-tit button { margin-left: auto; background: #15803d; color: #fff; border: 0; border-radius: 6px; padding: 6px 12px; font: 600 12px ui-sans-serif, system-ui, sans-serif; }
+.mk-nova-main table { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; }
+.mk-nova-main th { text-align: left; font-weight: 600; color: #475569; background: #f1f5f9; padding: 7px 10px; }
+.mk-nova-main td { padding: 7px 10px; border-top: 1px solid #e2e8f0; }
+.mk-nova-main td small { display: block; color: #64748b; }
+.ns { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+.ns.fin { background: #dcfce7; color: #166534; } .ns.rep { background: #e0e7ff; color: #3730a3; }
+.ns.esp { background: #fef3c7; color: #92400e; } .ns.ab { background: #f1f5f9; color: #334155; }
+/* ERP multiempresa: Bootstrap clásico */
+.mk-mc-app { font: 400 12px/1.5 "Helvetica Neue", Arial, sans-serif; background: #fff; color: #333; }
+.mk-mc-app > * { min-width: 720px; }
+.mk-mc-app nav { display: flex; align-items: center; gap: 16px; background: #2c3e50; color: #cfd8dc; padding: 9px 16px; }
+.mk-mc-app nav b { color: #fff; font-size: 14px; } .mk-mc-app nav .on { color: #fff; font-weight: 700; }
+.mk-mc-app nav em { margin-left: auto; font-style: normal; background: #34495e; padding: 3px 10px; border-radius: 3px; color: #fff; }
+.mk-mc-main { padding: 14px 16px; }
+.mk-mc-main h4 { margin: 0 0 10px; font-size: 16px; font-weight: 500; color: #2c3e50; }
+.mk-mc-cab { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 10px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 3px; padding: 8px 10px; margin-bottom: 10px; }
+.mk-mc-cab small { display: block; color: #595959; font-size: 11px; }
+.mk-mc-main th { background: #2c3e50; color: #fff; text-align: left; font-weight: 600; padding: 6px 8px; }
+.mk-mc-main td { padding: 6px 8px; border-bottom: 1px solid #ddd; }
+.mk-mc-main tbody tr:nth-child(even) td { background: #f9f9f9; }
+.mk-mc-pie { display: flex; align-items: center; gap: 14px; margin-top: 10px; }
+.mk-mc-pie span:first-child { flex: 1; }
+.mk-mc-pie span { white-space: nowrap; }
+.mk-mc-pie button { background: #fff; border: 1px solid #ccc; border-radius: 3px; padding: 4px 10px; font: 12px Arial, sans-serif; color: #333; }
+
 @media (max-width: 900px) {
   .pagina { display: block; padding: 0 20px; }
   .lado { position: static; height: auto; padding: 56px 0 0; margin: 0; overflow: visible; }
@@ -125,11 +209,11 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
   .enlaces a { min-height: 40px; }
 }
 @media (max-width: 560px) {
-  thead { position: absolute; left: -9999px; }
-  tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 16px; border-bottom: 1px solid var(--linea); padding: 12px 0; }
-  tbody th, tbody td { border: 0; padding: 0; }
-  td.h { padding-right: 0; }
-  td.d { grid-column: 1 / -1; font-size: 0.875rem; margin-top: 2px; }
+  .envoltura thead { position: absolute; left: -9999px; }
+  .envoltura tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 16px; border-bottom: 1px solid var(--linea); padding: 12px 0; }
+  .envoltura tbody th, .envoltura tbody td { border: 0; padding: 0; }
+  .envoltura td.h { padding-right: 0; }
+  .envoltura td.d { grid-column: 1 / -1; font-size: 0.875rem; margin-top: 2px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -160,6 +244,7 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
     <ul class="indice">
       <li><a href="#sobre">Sobre mí</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#pantallas">Pantallas</a></li>
       <li><a href="#capacidades">Capacidades</a></li>
       <li><a href="#recorrido">Recorrido</a></li>
       <li><a href="#metodo">Cómo trabajo</a></li>
@@ -250,6 +335,52 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
   </ol>
 </section>
 
+<section aria-labelledby="pantallas">
+  <h2 id="pantallas">Pantallas</h2>
+  <p>Así se ven los sistemas en los que trabajé. Las rehice para esta página con datos inventados: empresas, personas, patentes e importes no existen.</p>
+  <div class="pantalla">
+    <figure class="mk mk-erp" aria-label="Ejemplo de pantalla: órdenes de carga">
+<div class="mk-barra"><span></span><span></span><span></span><em>ERP Transporte — Órdenes de carga</em></div>
+<div class="mk-erp-app">
+ <aside><b>Transporte</b><ul><li>Inicio</li><li class="on">Órdenes de carga</li><li>Guías</li><li>Liquidaciones</li><li>Camiones y semis</li><li>Choferes</li><li>Clientes</li><li>Cuentas corrientes</li><li>Contabilidad</li></ul></aside>
+ <div class="mk-erp-main">
+  <div class="mk-erp-tit"><h4>Órdenes de carga</h4><button>+ Nueva orden</button></div>
+  <div class="mk-erp-filtros"><label>Desde<span>12/11/2026</span></label><label>Hasta<span>14/11/2026</span></label><label>Cliente<span>Todos</span></label><label>Estado<span>Todos</span></label><button>Buscar</button></div>
+  <div class="mk-erp-tabla"><table><thead><tr><th>Número</th><th>Fecha</th><th>Cliente</th><th>Recorrido</th><th>Camión</th><th class="r">Kg</th><th class="r">Importe</th><th>Estado</th></tr></thead>
+  <tbody><tr><td class="n">00018422</td><td>12/11/2026</td><td>Cereales del Paraná S.A.</td><td>San Nicolás → Rosario</td><td>AB 312 KT</td><td class="r">29.800</td><td class="r">$ 412.300,00</td><td><span class="est ok">Facturada</span></td></tr><tr><td class="n">00018423</td><td>12/11/2026</td><td>Molinos La Esperanza S.R.L.</td><td>Ramallo → Bahía Blanca</td><td>AE 908 LM</td><td class="r">30.150</td><td class="r">$ 1.286.400,00</td><td><span class="est viaje">En viaje</span></td></tr><tr><td class="n">00018424</td><td>13/11/2026</td><td>Acería Norte S.A.</td><td>San Nicolás → Villa Constitución</td><td>AC 455 FZ</td><td class="r">27.600</td><td class="r">$ 268.900,00</td><td><span class="est viaje">En viaje</span></td></tr><tr><td class="n">00018425</td><td>13/11/2026</td><td>Cereales del Paraná S.A.</td><td>Pergamino → San Nicolás</td><td>AD 127 PQ</td><td class="r">28.900</td><td class="r">$ 389.700,00</td><td><span class="est carga">Cargando</span></td></tr><tr><td class="n">00018426</td><td>14/11/2026</td><td>Agroinsumos Pampa S.A.</td><td>San Nicolás → Junín</td><td>AB 312 KT</td><td class="r">26.300</td><td class="r">$ 523.100,00</td><td><span class="est pend">Pendiente</span></td></tr><tr><td class="n">00018427</td><td>14/11/2026</td><td>Molinos La Esperanza S.R.L.</td><td>Ramallo → Rosario</td><td>AF 220 RS</td><td class="r">30.000</td><td class="r">$ 401.800,00</td><td><span class="est pend">Pendiente</span></td></tr></tbody><tfoot><tr><td colspan="5">6 órdenes</td><td class="r">172.750</td><td class="r">$ 3.282.200,00</td><td></td></tr></tfoot></table></div>
+ </div></div>
+</figure>
+    <p class="pie-mk"><b>ERP de transporte de carga.</b> El listado de órdenes de carga, el corazón del sistema. Coordiné la migración de este módulo desde el FoxPro y armé los generadores con los que el equipo hizo los ABM.</p>
+  </div>
+  <div class="pantalla">
+    <figure class="mk mk-nova" aria-label="Ejemplo de pantalla: órdenes de trabajo del taller">
+<div class="mk-barra"><span></span><span></span><span></span><em>Panel de flota — Taller</em></div>
+<div class="mk-nova-app">
+ <header><b>Flota</b><nav><span>Indicadores</span><span class="on">Taller</span><span>Vehículos</span><span>Pañol</span><span>Gasoil</span></nav><i>MP</i></header>
+ <div class="mk-nova-main">
+  <div class="mk-nova-kpi"><div><b>3</b>en reparación</div><div><b>1</b>esperando repuesto</div><div><b>94&nbsp;%</b>flota disponible</div><div><b>2,4 días</b>tiempo medio de cierre</div></div>
+  <div class="mk-nova-tit"><h4>Órdenes de trabajo</h4><span class="tabs"><span class="on">Activas</span><span>Cerradas</span><span>Todas</span></span><button>+ Nueva OT</button></div>
+  <table><thead><tr><th>OT</th><th>Unidad</th><th>Falla o tarea</th><th>Mecánico</th><th>Apertura</th><th>Estado</th></tr></thead><tbody><tr><td class="n">OT-1042</td><td>Camión<small>AB 312 KT</small></td><td>Cambio de cubiertas eje 2</td><td>Ruiz, M.</td><td>11/11/2026</td><td><span class="ns fin">Cerrada</span></td></tr><tr><td class="n">OT-1043</td><td>Pala cargadora<small>L5</small></td><td>Pérdida de aceite hidráulico</td><td>Benítez, A.</td><td>12/11/2026</td><td><span class="ns rep">En reparación</span></td></tr><tr><td class="n">OT-1044</td><td>Semi<small>AC 019 HJ</small></td><td>Revisión de frenos</td><td>Ruiz, M.</td><td>13/11/2026</td><td><span class="ns esp">Esperando repuesto</span></td></tr><tr><td class="n">OT-1045</td><td>Camión<small>AE 908 LM</small></td><td>Service 60.000 km</td><td>Paz, F.</td><td>14/11/2026</td><td><span class="ns rep">En reparación</span></td></tr><tr><td class="n">OT-1046</td><td>Autoelevador<small>AE-03</small></td><td>No arranca en frío</td><td>Benítez, A.</td><td>14/11/2026</td><td><span class="ns ab">Abierta</span></td></tr></tbody></table>
+ </div></div>
+</figure>
+    <p class="pie-mk"><b>Gestión de flota.</b> Las órdenes de trabajo del taller, en React y TypeScript. Hice el circuito de alta, seguimiento y cierre de las órdenes, y los indicadores de arriba.</p>
+  </div>
+  <div class="pantalla">
+    <figure class="mk mk-mc" aria-label="Ejemplo de pantalla: cuenta corriente de un cliente">
+<div class="mk-barra"><span></span><span></span><span></span><em>ERP multiempresa — Cuenta corriente</em></div>
+<div class="mk-mc-app">
+ <nav><b>Gestión</b><span>Ventas</span><span>Compras</span><span class="on">Clientes</span><span>Tesorería</span><span>Contabilidad</span><em>Empresa: Metalúrgica Delta S.A. ▾</em></nav>
+ <div class="mk-mc-main">
+  <h4>Cuenta corriente de clientes</h4>
+  <div class="mk-mc-cab"><div><small>Cliente</small>Construcciones del Litoral S.A.</div><div><small>CUIT</small>30-71482956-0</div><div><small>Condición IVA</small>Responsable inscripto</div><div><small>Período</small>01/10/2026 al 15/11/2026</div></div>
+  <table><thead><tr><th>Fecha</th><th>Comprobante</th><th>Número</th><th class="r">Debe</th><th class="r">Haber</th><th class="r">Saldo</th></tr></thead><tbody><tr><td>01/10/2026</td><td>Saldo anterior</td><td class="n"></td><td class="r"></td><td class="r"></td><td class="r">$ 354.200,00</td></tr><tr><td>03/10/2026</td><td>Factura A</td><td class="n">0004-00012871</td><td class="r">$ 1.452.000,00</td><td class="r"></td><td class="r">$ 1.806.200,00</td></tr><tr><td>15/10/2026</td><td>Recibo</td><td class="n">0002-00003114</td><td class="r"></td><td class="r">$ 1.000.000,00</td><td class="r">$ 806.200,00</td></tr><tr><td>22/10/2026</td><td>Factura A</td><td class="n">0004-00012990</td><td class="r">$ 863.550,00</td><td class="r"></td><td class="r">$ 1.669.750,00</td></tr><tr><td>28/10/2026</td><td>Nota de crédito A</td><td class="n">0004-00000412</td><td class="r"></td><td class="r">$ 48.400,00</td><td class="r">$ 1.621.350,00</td></tr><tr><td>05/11/2026</td><td>Recibo</td><td class="n">0002-00003187</td><td class="r"></td><td class="r">$ 1.267.150,00</td><td class="r">$ 354.200,00</td></tr><tr><td>10/11/2026</td><td>Factura A</td><td class="n">0004-00013102</td><td class="r">$ 612.590,00</td><td class="r"></td><td class="r">$ 966.790,00</td></tr></tbody></table>
+  <div class="mk-mc-pie"><span>Saldo al 15/11/2026: <b>$ 966.790,00</b></span><span>Vencido: <b>$ 354.200,00</b> · A vencer: <b>$ 612.590,00</b></span><button>Imprimir</button><button>Exportar a Excel</button></div>
+ </div></div>
+</figure>
+    <p class="pie-mk"><b>ERP multiempresa.</b> La cuenta corriente de un cliente, con el selector de empresa arriba: el mismo sistema atiende a tres empresas. Hice los comprobantes y los saldos, que tienen que cerrar al centavo con la contabilidad.</p>
+  </div>
+</section>
+
 <section aria-labelledby="capacidades">
   <h2 id="capacidades">Capacidades</h2>
   <p class="stack"><b>Stack:</b> Node.js, Express, SQL Server (stored procedures), MySQL y Nunjucks en el back; JavaScript, React 19, TypeScript y Tailwind en el front.</p>
@@ -329,6 +460,24 @@ footer { grid-column: 2; padding: 0 0 56px; color: var(--tinta-3); font-size: 0.
     if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) marcar('contacto');
   }, { passive: true });
   marcar('sobre');
+})();
+</script>
+<script>
+// Las pantallas de ejemplo se dibujan a un ancho fijo y se achican para entrar en su columna.
+// Si achicadas quedarían ilegibles (celular), se dejan a tamaño real con desplazamiento.
+(() => {
+  const anchos = { 'mk-erp-app': 1040, 'mk-nova-app': 820, 'mk-mc-app': 860 };
+  const apps = [...document.querySelectorAll('.mk-erp-app, .mk-nova-app, .mk-mc-app')];
+  if (!apps.length || !('zoom' in document.body.style)) return;
+  const ajustar = () => apps.forEach(app => {
+    const ancho = anchos[[...app.classList].find(c => c in anchos)];
+    const k = app.parentElement.clientWidth / ancho;
+    app.style.width = ancho + 'px';
+    app.style.zoom = k >= 0.6 && k < 1 ? k.toFixed(3) : '';
+    if (k >= 1) app.style.width = '';
+  });
+  new ResizeObserver(ajustar).observe(document.querySelector('main'));
+  document.fonts.ready.then(ajustar);
 })();
 </script>
 </body>
